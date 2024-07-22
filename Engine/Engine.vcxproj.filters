@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Time">
+      <UniqueIdentifier>{5ac94f57-a8b6-41a6-a9ce-37ea9c424b9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Base">
+      <UniqueIdentifier>{11421b8f-660d-4ed5-b35d-024dd46f1807}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Base">
+      <UniqueIdentifier>{32e2c523-5d09-449b-b77b-c739c5b49ec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Base\Render">
+      <UniqueIdentifier>{ef909794-bca3-48ae-9ae8-4a73e7941912}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC">
+      <UniqueIdentifier>{6dce5bba-d90f-471c-bccc-0b5a23bdfd22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC\Entity">
+      <UniqueIdentifier>{aacad877-b757-46bc-bb91-fd6a35423e16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC\Component">
+      <UniqueIdentifier>{da4bd9ba-634e-4622-934e-e014e2cc60e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC\Entity\Base">
+      <UniqueIdentifier>{5a039092-0107-4f4c-8780-9a69fa0ff320}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC\Entity\HandleTable">
+      <UniqueIdentifier>{ded10cfa-6357-4739-b9c4-a6940f714c24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC\FamilyTypeId">
+      <UniqueIdentifier>{9ca8aa67-7c74-4bee-b2f7-62ab7c91668a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC\Component\Base">
+      <UniqueIdentifier>{da220c2d-67f4-4a5a-858c-763aff16e89e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC\Manager">
+      <UniqueIdentifier>{eeb4deba-899b-44f3-bb8f-3728c50c5c87}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeSystem.h">
+      <Filter>소스 파일\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine.h">
+      <Filter>헤더 파일\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>헤더 파일\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="STL.h">
+      <Filter>헤더 파일\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="D2DRender.h">
+      <Filter>소스 파일\Base\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityHandleTable.h">
+      <Filter>소스 파일\EC\Entity\HandleTable</Filter>
+    </ClInclude>
+    <ClInclude Include="FamilyTypeId.h">
+      <Filter>소스 파일\EC\FamilyTypeId</Filter>
+    </ClInclude>
+    <ClInclude Include="IComponent.h">
+      <Filter>소스 파일\EC\Component\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>소스 파일\EC\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="IEntity.h">
+      <Filter>소스 파일\EC\Entity\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>소스 파일\EC\Entity</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TimeSystem.cpp">
+      <Filter>소스 파일\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine.cpp">
+      <Filter>소스 파일\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>소스 파일\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="D2DRender.cpp">
+      <Filter>소스 파일\Base\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityHandleTable.cpp">
+      <Filter>소스 파일\EC\Entity\HandleTable</Filter>
+    </ClCompile>
+    <ClCompile Include="FamilyTypeId.cpp">
+      <Filter>소스 파일\EC\FamilyTypeId</Filter>
+    </ClCompile>
+    <ClCompile Include="IComponent.cpp">
+      <Filter>소스 파일\EC\Component\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>소스 파일\EC\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="IEntity.cpp">
+      <Filter>소스 파일\EC\Entity\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>소스 파일\EC\Entity</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
