@@ -141,27 +141,41 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Component.h" />
+    <ClInclude Include="ComponentManager.h" />
     <ClInclude Include="D2DRender.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityHandleTable.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="EventDelegate.h" />
+    <ClInclude Include="EventDispatcher.h" />
+    <ClInclude Include="EventHandler.h" />
+    <ClInclude Include="EventListener.h" />
     <ClInclude Include="FamilyTypeId.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="IComponent.h" />
     <ClInclude Include="IEntity.h" />
+    <ClInclude Include="IEvent.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="STL.h" />
     <ClInclude Include="TimeSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Component.cpp" />
+    <ClCompile Include="ComponentManager.cpp" />
     <ClCompile Include="D2DRender.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityHandleTable.cpp" />
+    <ClCompile Include="Event.cpp" />
+    <ClCompile Include="EventDelegate.cpp" />
+    <ClCompile Include="EventDispatcher.cpp" />
+    <ClCompile Include="EventHandler.cpp" />
+    <ClCompile Include="EventListener.cpp" />
     <ClCompile Include="FamilyTypeId.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="IComponent.cpp" />
     <ClCompile Include="IEntity.cpp" />
+    <ClCompile Include="IEvent.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

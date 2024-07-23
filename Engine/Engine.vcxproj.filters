@@ -49,6 +49,27 @@
     <Filter Include="소스 파일\EC\Manager">
       <UniqueIdentifier>{eeb4deba-899b-44f3-bb8f-3728c50c5c87}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\EC\Event">
+      <UniqueIdentifier>{5ab1a230-9a18-479e-ae92-b814e6739b4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC\Event\Base">
+      <UniqueIdentifier>{3aacea2c-c78c-47f1-a7d1-7bd17ec6e76a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC\Event\Delegate">
+      <UniqueIdentifier>{f0d07b68-c672-4537-a24b-69d89d872571}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC\Event\Dispatcher">
+      <UniqueIdentifier>{df33e2b0-5c9b-4d5e-9d9c-f911e8714ac0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC\Event\Handler">
+      <UniqueIdentifier>{834dc08f-267a-4b25-8da0-fb0578fe11a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC\Event\Listener">
+      <UniqueIdentifier>{d2214860-3417-4233-a737-8f5d204828f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EC\Base">
+      <UniqueIdentifier>{02c51aa0-870b-4c2e-b1d4-e8e485102931}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -87,6 +108,27 @@
     <ClInclude Include="Entity.h">
       <Filter>소스 파일\EC\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>소스 파일\EC\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="IEvent.h">
+      <Filter>소스 파일\EC\Event\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="EventDelegate.h">
+      <Filter>소스 파일\EC\Event\Delegate</Filter>
+    </ClInclude>
+    <ClInclude Include="EventDispatcher.h">
+      <Filter>소스 파일\EC\Event\Dispatcher</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandler.h">
+      <Filter>소스 파일\EC\Event\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="EventListener.h">
+      <Filter>소스 파일\EC\Event\Listener</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentManager.h">
+      <Filter>소스 파일\EC\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
@@ -118,6 +160,27 @@
     </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>소스 파일\EC\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>소스 파일\EC\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="IEvent.cpp">
+      <Filter>소스 파일\EC\Event\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="EventDelegate.cpp">
+      <Filter>소스 파일\EC\Event\Delegate</Filter>
+    </ClCompile>
+    <ClCompile Include="EventDispatcher.cpp">
+      <Filter>소스 파일\EC\Event\Dispatcher</Filter>
+    </ClCompile>
+    <ClCompile Include="EventHandler.cpp">
+      <Filter>소스 파일\EC\Event\Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="EventListener.cpp">
+      <Filter>소스 파일\EC\Event\Listener</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentManager.cpp">
+      <Filter>소스 파일\EC\Manager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
