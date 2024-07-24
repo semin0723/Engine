@@ -3,17 +3,19 @@
 
 ECBase* _ec = nullptr;
 
-void Initialize()
-{
-	if (_ec == nullptr) {
-		_ec = new ECBase;
+namespace EC {
+	void Initialize()
+	{
+		if (_ec == nullptr) {
+			_ec = new ECBase;
+		}
 	}
-}
 
-void Finalize()
-{
-	if (_ec != nullptr) {
-		delete _ec;
-		_ec = nullptr;
+	void Finalize()
+	{
+		if (_ec != nullptr) {
+			delete _ec;
+			_ec = nullptr;
+		}
 	}
 }
