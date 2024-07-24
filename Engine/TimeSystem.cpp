@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "TimeSystem.h"
 
 void TimeSystem::Initialize()

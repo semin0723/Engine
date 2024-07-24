@@ -70,6 +70,6 @@ private:
 		}
 	}
 	
-	friend class ECSBase;
+	friend class ECBase;
 };
 

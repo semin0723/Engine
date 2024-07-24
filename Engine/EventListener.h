@@ -1,6 +1,7 @@
 #pragma once
 #include "EventDelegate.h"
 #include "EventHandler.h"
+#include "ECMain.h"
 
 class EventListener
 {
@@ -16,7 +17,7 @@ public:
 		IEventDelegate* newDelegate = new EventDelegate<C, E>(static_cast<C*>(this), Callback);
 
 		_callbacks.push_back(newDelegate);
-		ECS::_ecs->SubscribeEvent<E>(newDelegate);
+		Engine->SubscribeEvent<E>(newDelegate);
 	}
 
 	template<class E, class C>
@@ -29,7 +30,7 @@ public:
 					return other == callback;
 					}
 				);
-				ECS::_ecs->UnSubscribeEvent(&delegate);
+				Engine->UnSubscribeEvent(&delegate);
 				break;
 			}
 		}

@@ -132,6 +132,15 @@
     <ClInclude Include="EntityManager.h">
       <Filter>소스 파일\EC\Manager</Filter>
     </ClInclude>
+    <ClInclude Include="ECBase.h">
+      <Filter>소스 파일\EC\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Elements.h">
+      <Filter>소스 파일\EC\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ECMain.h">
+      <Filter>소스 파일\EC\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
@@ -187,6 +196,12 @@
     </ClCompile>
     <ClCompile Include="EntityManager.cpp">
       <Filter>소스 파일\EC\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ECBase.cpp">
+      <Filter>소스 파일\EC\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="ECMain.cpp">
+      <Filter>소스 파일\EC\Base</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

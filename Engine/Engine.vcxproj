@@ -143,6 +143,9 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentManager.h" />
     <ClInclude Include="D2DRender.h" />
+    <ClInclude Include="ECBase.h" />
+    <ClInclude Include="ECMain.h" />
+    <ClInclude Include="Elements.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityHandleTable.h" />
     <ClInclude Include="EntityManager.h" />
@@ -165,6 +168,8 @@
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ComponentManager.cpp" />
     <ClCompile Include="D2DRender.cpp" />
+    <ClCompile Include="ECBase.cpp" />
+    <ClCompile Include="ECMain.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityHandleTable.cpp" />
     <ClCompile Include="EntityManager.cpp" />
