@@ -129,6 +129,9 @@
     <ClInclude Include="ComponentManager.h">
       <Filter>소스 파일\EC\Manager</Filter>
     </ClInclude>
+    <ClInclude Include="EntityManager.h">
+      <Filter>소스 파일\EC\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
@@ -180,6 +183,9 @@
       <Filter>소스 파일\EC\Event\Listener</Filter>
     </ClCompile>
     <ClCompile Include="ComponentManager.cpp">
+      <Filter>소스 파일\EC\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityManager.cpp">
       <Filter>소스 파일\EC\Manager</Filter>
     </ClCompile>
   </ItemGroup>

@@ -14,9 +14,10 @@ ComponentManager::ComponentManager()
 
 ComponentManager::~ComponentManager()
 {
-    for (auto componentContainer : _componentContainerRegistry) {
-        delete componentContainer.second;
-        componentContainer.second = nullptr;
+    for (int i = 0; i < _componentTable.size(); i++) {
+        if (_componentTable[i] != nullptr) {
+            ReleaseComponentId(i);
+        }
     }
 }
 
@@ -43,6 +44,7 @@ ComponentId ComponentManager::MappingComponentId(IComponent* component)
 
 void ComponentManager::ReleaseComponentId(ComponentId id)
 {
+    delete _componentTable[id];
     _componentTable[id] = nullptr;
 }
 
