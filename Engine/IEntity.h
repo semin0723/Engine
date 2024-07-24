@@ -42,6 +42,8 @@ public:
 	virtual void OnEnable() {}
 	virtual void OnDisable() {}
 
+	virtual void Initialize() {}
+
 protected:
 	EntityId _entityId;
 

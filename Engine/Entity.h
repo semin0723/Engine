@@ -13,6 +13,8 @@ public:
     virtual const EntityTypeId GetEntityTypeId() const override {
         return ENTITY_TYPE_ID;
     }
+
+    virtual void Initialize() {}
 };
 
 template<class E>
