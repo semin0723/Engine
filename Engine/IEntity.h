@@ -2,6 +2,7 @@
 #include "pch.h"
 #include "EntityHandleTable.h"
 #include "FamilyTypeId.h"
+#include "ComponentManager.h"
 
 using EntityTypeId = TypeId;
 using ChildEntities = std::vector<EntityId>;
@@ -28,7 +29,7 @@ public:
 	bool operator==(const IEntity* other) const { return _entityId == other->_entityId; }
 	bool operator!=(const IEntity* other) const { return _entityId != other->_entityId; }
 
-	virtual const EntityTypeId GetEntityTypeId() const {}
+	virtual const EntityTypeId GetEntityTypeId() const = 0;
 	const EntityId GetEntityId() const { return _entityId; }
 
 	void SetParentEntity(EntityId id) { _parentId = id; }
