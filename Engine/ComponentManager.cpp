@@ -44,6 +44,8 @@ ComponentId ComponentManager::MappingComponentId(IComponent* component)
 
 void ComponentManager::ReleaseComponentId(ComponentId id)
 {
+    _componentTable[id]->OnDestroy();
+
     delete _componentTable[id];
     _componentTable[id] = nullptr;
 }
