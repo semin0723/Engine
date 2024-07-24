@@ -8,7 +8,7 @@ public:
 	template <class F>
 	static const TypeId Get() {
 		static const TypeId = _typeCount++;
-		return typeId;
+		return _typeCount;
 	}
 	static const TypeId Get() { return _typeCount; }
 
