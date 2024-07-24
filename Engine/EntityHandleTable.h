@@ -28,7 +28,14 @@ class EntityHandleTable
 	using EntityTable = std::pair<ULL, E*>;
 public:
 	EntityHandleTable() { ExpandTable(); }
-	~EntityHandleTable() {}
+	~EntityHandleTable() {
+		for (int i = 0; i < _handleTable.size(); i++) {
+			if (_handleTable[i].second == nullptr) continue;
+
+			delete _handleTable[i].second;
+			_handleTable[i].second = nullptr;
+		}
+	}
 
 	EntityId MappingHandle(E* newObj) {
 		ULL i = 0;
@@ -48,6 +55,7 @@ public:
 	}
 
 	void ReleaseHandle(EntityId id) {
+		delete _handleTable[id._index].second;
 		_handleTable[id._index].second = nullptr;
 	}
 
