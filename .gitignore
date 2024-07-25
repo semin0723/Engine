@@ -444,3 +444,5 @@ FodyWeavers.xsd
 DocumentLayout.json
 VSWorkspaceState.json
 slnx.sqlite
+
+.idb
