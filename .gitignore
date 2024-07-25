@@ -445,4 +445,5 @@ DocumentLayout.json
 VSWorkspaceState.json
 slnx.sqlite
 
-.idb
+.idb/
+*.idb
