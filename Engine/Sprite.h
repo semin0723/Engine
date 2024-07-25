@@ -23,7 +23,7 @@ public:
 
 	float _playRate = 0;
 	int _startAnimationIdx = 0;
-	int _endAnimationIdx = 0;
+	int _endAnimationIdx = (std::numeric_limits<int>::max)();
 
 	bool _flipX = false;
 	bool _flipY = false;

@@ -25,4 +25,7 @@ void Sprite::Render(ID2D1HwndRenderTarget* target)
 	D2D1_RECT_F dest = { 0, 0, _size.x, _size.y };
 
 	target->DrawBitmap(bitmap, dest);
+
+	_startAnimationIdx++;
+	if (_startAnimationIdx == spSet.size()) _startAnimationIdx = 0;
 }
