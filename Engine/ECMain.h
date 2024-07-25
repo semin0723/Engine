@@ -1,11 +1,9 @@
 #pragma once
 #include "ECBase.h"
 
-#ifndef _MAIN_ENGINE_
-	#define Engine EC::_ec
-	#define EntityManager Engine->GetEntityManager()
-	#define ComponentManager Engine->GetComponentManager()
-#endif
+#define Engine EC::_ec
+#define entityManager Engine->GetEntityManager()
+#define componentManager Engine->GetComponentManager()
 
 class ECBase;
 

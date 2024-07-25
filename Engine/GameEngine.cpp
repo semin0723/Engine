@@ -73,10 +73,9 @@ void GameEngine::Run()
 void GameEngine::Finalize()
 {
     Engine->End();
-
-    _d2dRender.Finalize();
-    ResourceSystem::GetInstance()->DeleteInstance();
     EC::Finalize();
+    ResourceSystem::GetInstance()->DeleteInstance();
+    _d2dRender.Finalize();
 }
 
 void GameEngine::SetWindowSize(int width, int height)

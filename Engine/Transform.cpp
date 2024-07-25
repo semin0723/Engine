@@ -8,12 +8,12 @@ Transform::Transform(Vector3 pos, Vector3 scale, Vector3 rotation) : _position(p
 
 void Transform::Update(float dt)
 {
-	EntityId parentId = EntityManager->GetEntity(_owner)->GetParentEntityId();
+	EntityId parentId = entityManager->GetEntity(_owner)->GetParentEntityId();
 	if (parentId == EntityId()) {
 		_worldPosition = _position;
 	}
 	else {
-		Vector3 parentWorldPosition = ComponentManager->GetComponent<Transform>(parentId)->_worldPosition;
+		Vector3 parentWorldPosition = componentManager->GetComponent<Transform>(parentId)->_worldPosition;
 		_worldPosition = parentWorldPosition + _position;
 	}
 }

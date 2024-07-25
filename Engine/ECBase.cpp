@@ -1,12 +1,15 @@
 #include "pch.h"
 #include "ECBase.h"
 #include "Entities.h"
+#include "Components.h"
 
 ECBase::ECBase()
 {
 	_eventHandler = new EventHandler;
 	_componentManager = new ComponentManager;
 	_entityManager = new EntityManager(_componentManager);
+
+	CreateWorldEntity();
 }
 
 ECBase::~ECBase()

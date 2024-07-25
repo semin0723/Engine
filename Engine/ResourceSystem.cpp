@@ -12,8 +12,8 @@ ResourceSystem::~ResourceSystem()
 	}
 	_spriteSets.clear();
 	_resources.clear();
-	_wicFactory->Release();
-	_writeFactory->Release();
+	if(_wicFactory != nullptr) _wicFactory->Release();
+	if (_writeFactory != nullptr) _writeFactory->Release();
 }
 
 ResourceSystem* ResourceSystem::GetInstance()

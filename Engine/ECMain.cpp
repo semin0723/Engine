@@ -1,9 +1,9 @@
 #include "pch.h"
 #include "ECMain.h"
 
-ECBase* _ec = nullptr;
-
 namespace EC {
+	ECBase* _ec = nullptr;
+
 	void Initialize()
 	{
 		if (_ec == nullptr) {

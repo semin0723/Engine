@@ -4,9 +4,6 @@
 #include "EntityManager.h"
 #include "ComponentManager.h"
 
-#define _MAIN_ENGINE_
-#include "Components.h"
-
 class EventListener;
 class IEvent;
 class EventHandler;
