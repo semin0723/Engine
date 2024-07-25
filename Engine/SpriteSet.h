@@ -1,10 +1,10 @@
 #pragma once
 #include "globalheader.h"
 
+using SpriteIdSet = std::vector<std::wstring>;
+
 class SpriteSet
 {
-	using SpriteIdSet = std::vector<std::wstring>;
-
 public:
 	SpriteSet() {}
 	~SpriteSet() {}

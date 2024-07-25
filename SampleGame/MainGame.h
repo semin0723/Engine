@@ -8,12 +8,4 @@ public:
 	~MainGame() = default;
 
 	virtual void Initialize(HINSTANCE hInstance, int width, int height) override;
-
-	//virtual void FixedUpdate();
-	//virtual void Update(float dt);
-	virtual void Render();
-	//virtual void Finalize();
-
-private:
-
 };

@@ -5,7 +5,7 @@
 class Transform : public Component<Transform>
 {
 public:
-	Transform() {}
+	Transform();
 	Transform(Vector3 pos, Vector3 scale, Vector3 rotation);
 	~Transform() {}
 

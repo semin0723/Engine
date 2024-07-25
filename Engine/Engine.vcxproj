@@ -70,6 +70,13 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)Bin\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)Bin\</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -159,11 +166,15 @@
     <ClInclude Include="EventListener.h" />
     <ClInclude Include="FamilyTypeId.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="GameElements.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="globalheader.h" />
     <ClInclude Include="IComponent.h" />
     <ClInclude Include="IEntity.h" />
     <ClInclude Include="IEvent.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="MapComponent.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ResourceSystem.h" />
     <ClInclude Include="Sprite.h" />
@@ -193,6 +204,9 @@
     <ClCompile Include="IComponent.cpp" />
     <ClCompile Include="IEntity.cpp" />
     <ClCompile Include="IEvent.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapComponent.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

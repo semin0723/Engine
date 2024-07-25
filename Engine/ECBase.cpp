@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "ECBase.h"
-#include "Entities.h"
-#include "Components.h"
+#include "GameElements.h"
+#include "ResourceSystem.h"
 
 ECBase::ECBase()
 {
@@ -10,6 +10,8 @@ ECBase::ECBase()
 	_entityManager = new EntityManager(_componentManager);
 
 	CreateWorldEntity();
+
+	ResourceSystem::GetInstance()->LoadSpriteData();
 }
 
 ECBase::~ECBase()
@@ -50,6 +52,11 @@ void ECBase::Update(float dt)
 void ECBase::End()
 {
 	End(_worldEntity);
+}
+
+void ECBase::Render(ID2D1HwndRenderTarget* target)
+{
+	Render(target, _worldEntity);
 }
 
 void ECBase::AddMapEntity(EntityId mapId)

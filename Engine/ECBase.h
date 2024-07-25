@@ -25,6 +25,7 @@ public:
 	void FixedUpdate();
 	void Update(float dt);
 	void End();
+	void Render(ID2D1HwndRenderTarget* target);
 
 	void AddMapEntity(EntityId mapId);
 

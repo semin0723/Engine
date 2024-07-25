@@ -2,6 +2,10 @@
 #include "Transform.h"
 #include "ECMain.h"
 
+Transform::Transform() : _position(Vector3(0, 0, 0)), _scale(Vector3(1.0f, 1.0f, 1.0f)), _rotation(Vector3(0, 0, 0))
+{
+}
+
 Transform::Transform(Vector3 pos, Vector3 scale, Vector3 rotation) : _position(pos), _scale(scale), _rotation(rotation)
 {
 }
@@ -9,7 +13,7 @@ Transform::Transform(Vector3 pos, Vector3 scale, Vector3 rotation) : _position(p
 void Transform::Update(float dt)
 {
 	EntityId parentId = entityManager->GetEntity(_owner)->GetParentEntityId();
-	if (parentId == EntityId()) {
+	if (parentId == EntityId() || componentManager->GetComponent<Transform>(parentId) == nullptr) {
 		_worldPosition = _position;
 	}
 	else {

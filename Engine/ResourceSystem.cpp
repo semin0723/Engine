@@ -47,37 +47,9 @@ void ResourceSystem::Initialize(ID2D1HwndRenderTarget* target)
 		reinterpret_cast<IUnknown**>(&_writeFactory));
 }
 
-void ResourceSystem::LoadImageData()
+void ResourceSystem::LoadSpriteData()
 {
-	std::wstring filename = L"";
-	std::wifstream file(filename);
-
-	std::wstringstream wss;
-	std::wstring line;
-	
-	while (true) {
-		std::getline(file, line);
-		if (line == L"") break;
-
-		std::wstring spriteId, spritePath;
-		wss = std::wstringstream(line);
-
-		std::getline(wss, spriteId, L',');
-		std::getline(wss, spritePath, L',');
-
-		ID2D1Bitmap* newBitmap;
-
-		GetImageFromFile(spritePath, &newBitmap);
-
-		std::unique_ptr<ID2D1Bitmap*> newBitmapPtr = std::unique_ptr<ID2D1Bitmap*>(&newBitmap);
-
-		_resources[spriteId] = std::move(newBitmapPtr);
-	}
-}
-
-void ResourceSystem::LoadAnimationData()
-{
-	std::wstring filename = L"";
+	std::wstring filename = L"data\\SpriteData\\SpriteData.CSV";
 	std::wifstream file(filename);
 
 	std::wstringstream wss;
@@ -98,9 +70,22 @@ void ResourceSystem::LoadAnimationData()
 			std::getline(file, line);
 			if (line == L"}") break;
 
-			std::wstring spriteId;
-			spriteId = line;
+			std::wstring spriteId, spritePath;
+
+			wss = std::wstringstream(line);
+
+			std::getline(wss, spriteId, L',');
+			std::getline(wss, spritePath, L',');
+
 			spSet->AddSpriteId(spriteId);
+
+			ID2D1Bitmap* newBitmap;
+
+			GetImageFromFile(spritePath, &newBitmap);
+
+			std::shared_ptr<ID2D1Bitmap*> newBitmapPtr = std::make_shared<ID2D1Bitmap*>(newBitmap);
+
+			_resources[spriteId] = newBitmapPtr;
 		}
 		_spriteSets.insert({ spriteSetId, spSet });
 	}

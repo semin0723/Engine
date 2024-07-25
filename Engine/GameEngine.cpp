@@ -61,7 +61,7 @@ void GameEngine::Run()
                 Engine->FixedUpdate();
             }
             Engine->Update(_time.GetDeltaTime());
-            Render();
+            Engine->Render(_d2dRender.GetRenderTarget());
 
             _d2dRender.GetRenderTarget()->EndDraw();
 
