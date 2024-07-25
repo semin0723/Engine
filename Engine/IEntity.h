@@ -16,7 +16,7 @@ public:
 	virtual ~IEntity() {}
 
 	template<class T>
-	T* GetComponent() const { return _componentManagerInstance->Getcomponent<T>(_entityId); }
+	T* GetComponent() const { return _componentManagerInstance->GetComponent<T>(_entityId); }
 
 	template<class T, class ...P>
 	T* AddComponent(P&&... param) { return _componentManagerInstance->AddComponent<T>(_entityId, std::forward<P>(param)...); }

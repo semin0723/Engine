@@ -57,7 +57,7 @@ public:
 	}
 
 	template<class T>
-	T* Getcomponent(const EntityId id) {
+	T* GetComponent(const EntityId id) {
 		const ComponentTypeId tid = T::COMPONENT_TYPE_ID;
 		const ComponentId cid = _entityComponentMap[id._index][tid];
 

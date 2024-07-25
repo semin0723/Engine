@@ -25,12 +25,12 @@ public:
 	void SetActive(bool state)	{ _enable = state; }
 	bool Active() const			{ return _enable; }
 
-	virtual void OnInitialize()		{}
-	virtual void OnBegin()			{}
-	virtual void OnFixedUpdate()	{}
-	virtual void OnUpdate(float dt) {}
-	virtual void OnEnd()			{}
-	virtual void OnDestroy()		{}
+	virtual void OnInitialize()			= 0;
+	virtual void OnBegin()				= 0;
+	virtual void OnFixedUpdate()		= 0;
+	virtual void OnUpdate(float dt)		= 0;
+	virtual void OnEnd()				= 0;
+	virtual void OnDestroy()			= 0;
 
 protected:
 	ComponentId		_hashValue;
