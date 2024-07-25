@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "ECBase.h"
-
+#include "Entities.h"
 
 ECBase::ECBase()
 {
@@ -23,56 +23,109 @@ ECBase::~ECBase()
 
 void ECBase::Initialize()
 {
-	// eid : EntityId     ,     ctid : ComponentTypeId;
-	for (int eid = 0; eid < _componentMappingTable.size(); eid++) {
-		for (int ctid = 0; ctid < _componentMappingTable[eid].size(); ctid++) {
-			if (_componentMappingTable[eid][ctid] == INVALID_COMPONENT_ID) continue;
-			ComponentId cid = _componentMappingTable[eid][ctid];
-			_componentManager->GetComponent(cid)->OnInitialize();
-		}
-	}
+	Initialize(_worldEntity);
 }
 
 void ECBase::Begin()
 {
-	for (int eid = 0; eid < _componentMappingTable.size(); eid++) {
-		for (int ctid = 0; ctid < _componentMappingTable[eid].size(); ctid++) {
-			if (_componentMappingTable[eid][ctid] == INVALID_COMPONENT_ID) continue;
-			ComponentId cid = _componentMappingTable[eid][ctid];
-			_componentManager->GetComponent(cid)->OnBegin();
-		}
-	}
+	Begin(_worldEntity);
 }
 
 void ECBase::FixedUpdate()
 {
-	for (int eid = 0; eid < _componentMappingTable.size(); eid++) {
-		for (int ctid = 0; ctid < _componentMappingTable[eid].size(); ctid++) {
-			if (_componentMappingTable[eid][ctid] == INVALID_COMPONENT_ID) continue;
-			ComponentId cid = _componentMappingTable[eid][ctid];
-			_componentManager->GetComponent(cid)->OnFixedUpdate();
-		}
-	}
+	FixedUpdate(_worldEntity);
 }
 
 void ECBase::Update(float dt)
 {
-	for (int eid = 0; eid < _componentMappingTable.size(); eid++) {
-		for (int ctid = 0; ctid < _componentMappingTable[eid].size(); ctid++) {
-			if (_componentMappingTable[eid][ctid] == INVALID_COMPONENT_ID) continue;
-			ComponentId cid = _componentMappingTable[eid][ctid];
-			_componentManager->GetComponent(cid)->OnUpdate(dt);
-		}
-	}
+	Update(_worldEntity, dt);
+	_eventHandler->DispatchEvents();
+	_entityManager->RemoveDestroyEntities();
+	_eventHandler->DispatchEvents();
 }
 
 void ECBase::End()
 {
-	for (int eid = 0; eid < _componentMappingTable.size(); eid++) {
-		for (int ctid = 0; ctid < _componentMappingTable[eid].size(); ctid++) {
-			if (_componentMappingTable[eid][ctid] == INVALID_COMPONENT_ID) continue;
-			ComponentId cid = _componentMappingTable[eid][ctid];
-			_componentManager->GetComponent(cid)->OnEnd();
-		}
+	End(_worldEntity);
+}
+
+void ECBase::AddMapEntity(EntityId mapId)
+{
+	_entityManager->GetEntity(_worldEntity)->AddChildEntity(mapId);
+	_entityManager->GetEntity(mapId)->SetParentEntity(_worldEntity);
+}
+
+void ECBase::CreateWorldEntity()
+{
+	_worldEntity = _entityManager->CreateEntity<World>();
+}
+
+void ECBase::Initialize(EntityId id)
+{
+	std::vector<ComponentId> cids = _componentManager->GetMappingTable()[id._index];
+	for (int i = 0; i < cids.size(); i++) {
+		if (cids[i] == INVALID_COMPONENT_ID) continue;
+		_componentManager->GetComponent(cids[i])->OnInitialize();
+	}
+
+	ChildEntities child = _entityManager->GetEntity(id)->GetChildEntityId();
+	for (auto& i : child) {
+		Initialize(i);
+	}
+}
+
+void ECBase::Begin(EntityId id)
+{
+	std::vector<ComponentId> cids = _componentManager->GetMappingTable()[id._index];
+	for (int i = 0; i < cids.size(); i++) {
+		if (cids[i] == INVALID_COMPONENT_ID) continue;
+		_componentManager->GetComponent(cids[i])->OnBegin();
+	}
+
+	ChildEntities child = _entityManager->GetEntity(id)->GetChildEntityId();
+	for (auto& i : child) {
+		Begin(i);
+	}
+}
+
+void ECBase::FixedUpdate(EntityId id)
+{
+	std::vector<ComponentId> cids = _componentManager->GetMappingTable()[id._index];
+	for (int i = 0; i < cids.size(); i++) {
+		if (cids[i] == INVALID_COMPONENT_ID) continue;
+		_componentManager->GetComponent(cids[i])->OnFixedUpdate();
+	}
+
+	ChildEntities child = _entityManager->GetEntity(id)->GetChildEntityId();
+	for (auto& i : child) {
+		FixedUpdate(i);
+	}
+}
+
+void ECBase::Update(EntityId id, float dt)
+{
+	std::vector<ComponentId> cids = _componentManager->GetMappingTable()[id._index];
+	for (int i = 0; i < cids.size(); i++) {
+		if (cids[i] == INVALID_COMPONENT_ID) continue;
+		if (i == Sprite::COMPONENT_TYPE_ID) continue;
+		_componentManager->GetComponent(cids[i])->OnUpdate(dt);
+	}
+
+	ChildEntities child = _entityManager->GetEntity(id)->GetChildEntityId();
+	for (auto& i : child) {
+		Update(i, dt);
+	}
+}
+
+void ECBase::Render(ID2D1HwndRenderTarget* target, EntityId id)
+{
+	ComponentId spriteComponent = _componentManager->GetMappingTable()[id._index][Sprite::COMPONENT_TYPE_ID];
+	if (spriteComponent != INVALID_COMPONENT_ID) {
+		static_cast<Sprite*>(_componentManager->GetComponent(spriteComponent))->Render(target);
+	}
+
+	ChildEntities child = _entityManager->GetEntity(id)->GetChildEntityId();
+	for (auto& i : child) {
+		Render(target, i);
 	}
 }

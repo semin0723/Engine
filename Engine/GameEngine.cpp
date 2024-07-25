@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "GameEngine.h"
+#include "ResourceSystem.h"
+#include "ECMain.h"
 
 void GameEngine::Initialize(HINSTANCE hInstance, int width, int height)
 {
@@ -29,6 +31,11 @@ void GameEngine::Initialize(HINSTANCE hInstance, int width, int height)
 
     _time.Initialize();
     _d2dRender.Initialize(_hWnd);
+    ResourceSystem::GetInstance()->Initialize(_d2dRender.GetRenderTarget());
+
+
+    // Engine Initialize
+    EC::Initialize();
 }
 
 void GameEngine::Run()
@@ -50,10 +57,10 @@ void GameEngine::Run()
             _timer += _time.GetDeltaTime();
 
             if (_timer >= 0.2f) {
-                _timer = 0;
-                FixedUpdate();
+                _timer -= 0.2f;
+                Engine->FixedUpdate();
             }
-            Update(_time.GetDeltaTime());
+            Engine->Update(_time.GetDeltaTime());
             Render();
 
             _d2dRender.GetRenderTarget()->EndDraw();
@@ -65,7 +72,11 @@ void GameEngine::Run()
 
 void GameEngine::Finalize()
 {
+    Engine->End();
+
     _d2dRender.Finalize();
+    ResourceSystem::GetInstance()->DeleteInstance();
+    EC::Finalize();
 }
 
 void GameEngine::SetWindowSize(int width, int height)

@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="소스 파일\Time">
-      <UniqueIdentifier>{5ac94f57-a8b6-41a6-a9ce-37ea9c424b9c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Base">
       <UniqueIdentifier>{11421b8f-660d-4ed5-b35d-024dd46f1807}</UniqueIdentifier>
     </Filter>
@@ -70,13 +67,58 @@
     <Filter Include="소스 파일\EC\Base">
       <UniqueIdentifier>{02c51aa0-870b-4c2e-b1d4-e8e485102931}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Base\Time">
+      <UniqueIdentifier>{5ac94f57-a8b6-41a6-a9ce-37ea9c424b9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component">
+      <UniqueIdentifier>{9e0cc2e0-844b-4818-bfd3-e1f397e69b46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component\Transform">
+      <UniqueIdentifier>{66f9fa8e-0ed1-472b-8b4e-4cd47178f800}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component\Sprite">
+      <UniqueIdentifier>{8df6769c-5c94-44a2-9a5b-30275ea0b805}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component\UI">
+      <UniqueIdentifier>{15a5a1a3-75e0-42cf-9abb-63b63941a1ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component\UI\Transform">
+      <UniqueIdentifier>{94d18150-9283-4a6b-9d32-c93e86c344f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component\UI\Group">
+      <UniqueIdentifier>{58c8bf28-3809-4e1f-b623-fb2d03631205}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component\UI\Button">
+      <UniqueIdentifier>{a8087b0c-13a9-46b4-845d-e8e8469438b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component\UI\Text">
+      <UniqueIdentifier>{05b23de1-3ec4-4892-8f53-6770940a592c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component\Animation">
+      <UniqueIdentifier>{6d99a603-2699-49fd-87bd-5e3320c49f77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Util">
+      <UniqueIdentifier>{fbc59b68-ae51-49f6-8ff5-01832a1c36ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Util\Vector3">
+      <UniqueIdentifier>{b3048f8c-6d64-43eb-8051-ce612bc9ab83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Resource">
+      <UniqueIdentifier>{b0682caf-836d-4872-a6d8-160c5497ac10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Resource\SpriteSet">
+      <UniqueIdentifier>{796b331d-7401-4e47-8abf-b770576d7457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Entities">
+      <UniqueIdentifier>{c5a061e5-ff3f-43f1-878c-9d3dd4e747ac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="TimeSystem.h">
-      <Filter>소스 파일\Time</Filter>
+      <Filter>소스 파일\Base\Time</Filter>
     </ClInclude>
     <ClInclude Include="GameEngine.h">
       <Filter>헤더 파일\Base</Filter>
@@ -141,10 +183,37 @@
     <ClInclude Include="ECMain.h">
       <Filter>소스 파일\EC\Base</Filter>
     </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>소스 파일\Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>소스 파일\Util\Vector3</Filter>
+    </ClInclude>
+    <ClInclude Include="globalheader.h">
+      <Filter>헤더 파일\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>소스 파일\Component\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceSystem.h">
+      <Filter>소스 파일\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteSet.h">
+      <Filter>소스 파일\Resource\SpriteSet</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>소스 파일\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities.h">
+      <Filter>헤더 파일\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Components.h">
+      <Filter>헤더 파일\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
-      <Filter>소스 파일\Time</Filter>
+      <Filter>소스 파일\Base\Time</Filter>
     </ClCompile>
     <ClCompile Include="GameEngine.cpp">
       <Filter>소스 파일\Base</Filter>
@@ -202,6 +271,24 @@
     </ClCompile>
     <ClCompile Include="ECMain.cpp">
       <Filter>소스 파일\EC\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>소스 파일\Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>소스 파일\Util\Vector3</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>소스 파일\Component\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceSystem.cpp">
+      <Filter>소스 파일\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteSet.cpp">
+      <Filter>소스 파일\Resource\SpriteSet</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>소스 파일\Entities</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

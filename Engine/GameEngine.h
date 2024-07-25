@@ -9,8 +9,8 @@ public:
 
 	virtual void Initialize(HINSTANCE hInstance, int width, int height);
 	void Run();
-	virtual void FixedUpdate() {}
-	virtual void Update(float dt) {}
+	//virtual void FixedUpdate() {}
+	//virtual void Update(float dt) {}
 	virtual void Render() {}
 	virtual void Finalize();
 
