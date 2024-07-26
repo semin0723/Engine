@@ -94,9 +94,6 @@
     <Filter Include="소스 파일\Component\UI\Text">
       <UniqueIdentifier>{05b23de1-3ec4-4892-8f53-6770940a592c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Component\Animation">
-      <UniqueIdentifier>{6d99a603-2699-49fd-87bd-5e3320c49f77}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Util">
       <UniqueIdentifier>{fbc59b68-ae51-49f6-8ff5-01832a1c36ce}</UniqueIdentifier>
     </Filter>
@@ -111,6 +108,9 @@
     </Filter>
     <Filter Include="소스 파일\Entities">
       <UniqueIdentifier>{c5a061e5-ff3f-43f1-878c-9d3dd4e747ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component\Map">
+      <UniqueIdentifier>{a20ba968-cbb0-4263-8bdb-e3ec402c901d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -210,6 +210,18 @@
     <ClInclude Include="Components.h">
       <Filter>헤더 파일\Base</Filter>
     </ClInclude>
+    <ClInclude Include="GameElements.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MapComponent.h">
+      <Filter>소스 파일\Component\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>소스 파일\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>소스 파일\Entities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
@@ -288,6 +300,15 @@
       <Filter>소스 파일\Resource\SpriteSet</Filter>
     </ClCompile>
     <ClCompile Include="World.cpp">
+      <Filter>소스 파일\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="MapComponent.cpp">
+      <Filter>소스 파일\Component\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>소스 파일\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
       <Filter>소스 파일\Entities</Filter>
     </ClCompile>
   </ItemGroup>
