@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ColliderComponent.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentManager.h" />
     <ClInclude Include="Components.h" />
@@ -160,6 +161,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityHandleTable.h" />
     <ClInclude Include="EntityManager.h" />
+    <ClInclude Include="EnumClass.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="EventDelegate.h" />
     <ClInclude Include="EventDispatcher.h" />
@@ -167,6 +169,7 @@
     <ClInclude Include="EventListener.h" />
     <ClInclude Include="FamilyTypeId.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="FunctionTimer.h" />
     <ClInclude Include="GameElements.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="globalheader.h" />
@@ -180,14 +183,18 @@
     <ClInclude Include="ResourceSystem.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteSet.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="StateComponent.h" />
     <ClInclude Include="STL.h" />
     <ClInclude Include="TimeSystem.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="UI.h" />
+    <ClInclude Include="UITransform.h" />
     <ClInclude Include="Vector3.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ColliderComponent.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ComponentManager.cpp" />
     <ClCompile Include="D2DRender.cpp" />
@@ -203,6 +210,7 @@
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="EventListener.cpp" />
     <ClCompile Include="FamilyTypeId.cpp" />
+    <ClCompile Include="FunctionTimer.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="IComponent.cpp" />
     <ClCompile Include="IEntity.cpp" />
@@ -219,9 +227,11 @@
     <ClCompile Include="ResourceSystem.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteSet.cpp" />
+    <ClCompile Include="StateComponent.cpp" />
     <ClCompile Include="TimeSystem.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="UI.cpp" />
+    <ClCompile Include="UITransform.cpp" />
     <ClCompile Include="Vector3.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>

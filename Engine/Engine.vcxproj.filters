@@ -124,6 +124,15 @@
     <Filter Include="소스 파일\DefaultEntity\UI">
       <UniqueIdentifier>{fa4a6fc2-d1c0-4979-9d36-e4601fb7a3f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Component\State">
+      <UniqueIdentifier>{29e89a43-2718-4567-83bd-2d67c798427f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component\Collider">
+      <UniqueIdentifier>{62666143-0a8e-47df-84a5-bc46338c0319}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Util\CallTimer">
+      <UniqueIdentifier>{2b42d62f-0ea4-460a-9d61-9e2736800b3e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -219,9 +228,6 @@
     <ClInclude Include="Components.h">
       <Filter>헤더 파일\Base</Filter>
     </ClInclude>
-    <ClInclude Include="GameElements.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="MapComponent.h">
       <Filter>소스 파일\Component\Map</Filter>
     </ClInclude>
@@ -239,6 +245,27 @@
     </ClInclude>
     <ClInclude Include="DefaultUI.h">
       <Filter>소스 파일\DefaultEntity\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UITransform.h">
+      <Filter>소스 파일\Component\UI\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="StateComponent.h">
+      <Filter>소스 파일\Component\State</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>소스 파일\Component\State</Filter>
+    </ClInclude>
+    <ClInclude Include="ColliderComponent.h">
+      <Filter>소스 파일\Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumClass.h">
+      <Filter>헤더 파일\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="GameElements.h">
+      <Filter>헤더 파일\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionTimer.h">
+      <Filter>소스 파일\Util\CallTimer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -334,6 +361,18 @@
     </ClCompile>
     <ClCompile Include="DefaultUI.cpp">
       <Filter>소스 파일\DefaultEntity\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UITransform.cpp">
+      <Filter>소스 파일\Component\UI\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="StateComponent.cpp">
+      <Filter>소스 파일\Component\State</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderComponent.cpp">
+      <Filter>소스 파일\Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="FunctionTimer.cpp">
+      <Filter>소스 파일\Util\CallTimer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

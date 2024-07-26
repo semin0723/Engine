@@ -10,7 +10,7 @@ public:
 	~Transform() {}
 
 	void Initialize() {}
-	void Begin() {}
+	void Begin();
 	void FixedUpdate() {}
 	void Update(float dt);
 	void End() {}
@@ -23,5 +23,10 @@ public:
 	Vector3 _rotation;
 	Vector3 _scale;
 	Vector3 _worldPosition;
+
+	D2D1::Matrix3x2F _worldTransform;
+
+	void MoveAmount();
+
 };
 

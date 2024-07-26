@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <limits>
 #include <chrono>
+#include <tuple>
 
 #define _USE_MATH_DEFINES
 #include <cmath>
