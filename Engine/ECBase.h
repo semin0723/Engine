@@ -53,8 +53,10 @@ private:
 
 	// World Entity
 	EntityId _worldEntity;
+	EntityId _baseUIEntity;
 
 	void CreateWorldEntity();
+	void CreateBaseUIEntity();
 
 	void Initialize(EntityId id);
 	void MapEnter(EntityId id) {}

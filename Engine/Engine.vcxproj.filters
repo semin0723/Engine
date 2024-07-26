@@ -106,11 +106,23 @@
     <Filter Include="소스 파일\Resource\SpriteSet">
       <UniqueIdentifier>{796b331d-7401-4e47-8abf-b770576d7457}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Entities">
-      <UniqueIdentifier>{c5a061e5-ff3f-43f1-878c-9d3dd4e747ac}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Component\Map">
       <UniqueIdentifier>{a20ba968-cbb0-4263-8bdb-e3ec402c901d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\DefaultEntity">
+      <UniqueIdentifier>{c5a061e5-ff3f-43f1-878c-9d3dd4e747ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\DefaultEntity\Map">
+      <UniqueIdentifier>{7fc6221c-f955-4cdb-aad5-36aeb8beb42e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\DefaultEntity\Object">
+      <UniqueIdentifier>{a45e2167-3234-4d3a-b46c-7cbf9e550252}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\DefaultEntity\World">
+      <UniqueIdentifier>{734b47f4-16d7-4993-9e1e-f8ab24ec9f56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\DefaultEntity\UI">
+      <UniqueIdentifier>{fa4a6fc2-d1c0-4979-9d36-e4601fb7a3f0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -201,9 +213,6 @@
     <ClInclude Include="SpriteSet.h">
       <Filter>소스 파일\Resource\SpriteSet</Filter>
     </ClInclude>
-    <ClInclude Include="World.h">
-      <Filter>소스 파일\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="Entities.h">
       <Filter>헤더 파일\Base</Filter>
     </ClInclude>
@@ -217,10 +226,19 @@
       <Filter>소스 파일\Component\Map</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
-      <Filter>소스 파일\Entities</Filter>
+      <Filter>소스 파일\DefaultEntity\Map</Filter>
     </ClInclude>
     <ClInclude Include="Object.h">
-      <Filter>소스 파일\Entities</Filter>
+      <Filter>소스 파일\DefaultEntity\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>소스 파일\DefaultEntity\World</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>소스 파일\DefaultEntity\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultUI.h">
+      <Filter>소스 파일\DefaultEntity\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -299,17 +317,23 @@
     <ClCompile Include="SpriteSet.cpp">
       <Filter>소스 파일\Resource\SpriteSet</Filter>
     </ClCompile>
-    <ClCompile Include="World.cpp">
-      <Filter>소스 파일\Entities</Filter>
-    </ClCompile>
     <ClCompile Include="MapComponent.cpp">
       <Filter>소스 파일\Component\Map</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
-      <Filter>소스 파일\Entities</Filter>
+      <Filter>소스 파일\DefaultEntity\Map</Filter>
     </ClCompile>
     <ClCompile Include="Object.cpp">
-      <Filter>소스 파일\Entities</Filter>
+      <Filter>소스 파일\DefaultEntity\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>소스 파일\DefaultEntity\World</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>소스 파일\DefaultEntity\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultUI.cpp">
+      <Filter>소스 파일\DefaultEntity\UI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

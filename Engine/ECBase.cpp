@@ -10,6 +10,7 @@ ECBase::ECBase()
 	_entityManager = new EntityManager(_componentManager);
 
 	CreateWorldEntity();
+	CreateBaseUIEntity();
 
 	ResourceSystem::GetInstance()->LoadSpriteData();
 }
@@ -29,11 +30,13 @@ ECBase::~ECBase()
 void ECBase::Initialize()
 {
 	Initialize(_worldEntity);
+	Initialize(_baseUIEntity);
 }
 
 void ECBase::Begin()
 {
 	Begin(_worldEntity);
+	Begin(_baseUIEntity);
 }
 
 void ECBase::FixedUpdate()
@@ -44,6 +47,7 @@ void ECBase::FixedUpdate()
 void ECBase::Update(float dt)
 {
 	Update(_worldEntity, dt);
+	Update(_baseUIEntity, dt);
 	_eventHandler->DispatchEvents();
 	_entityManager->RemoveDestroyEntities();
 	_eventHandler->DispatchEvents();
@@ -52,11 +56,13 @@ void ECBase::Update(float dt)
 void ECBase::End()
 {
 	End(_worldEntity);
+	End(_baseUIEntity);
 }
 
 void ECBase::Render(ID2D1HwndRenderTarget* target)
 {
 	Render(target, _worldEntity);
+	Render(target, _baseUIEntity);
 }
 
 void ECBase::AddMapEntity(EntityId mapId)
@@ -68,6 +74,11 @@ void ECBase::AddMapEntity(EntityId mapId)
 void ECBase::CreateWorldEntity()
 {
 	_worldEntity = _entityManager->CreateEntity<World>();
+}
+
+void ECBase::CreateBaseUIEntity()
+{
+	_worldEntity = _entityManager->CreateEntity<DefaultUI>();
 }
 
 void ECBase::Initialize(EntityId id)
