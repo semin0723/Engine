@@ -17,6 +17,10 @@ EntityId Map1() {
 
 	tf->_position = Vector3(100.0f, 100.0f, 0);
 
+	RigidBody* rb = componentManager->AddComponent<RigidBody>(sampleObject);
+
+
+
 	entityManager->GetEntity(map)->AddChildEntity(sampleObject);
 
 	entityManager->GetEntity(sampleObject)->SetParentEntity(map);
