@@ -333,6 +333,9 @@
     <ClInclude Include="UtilFunction.h">
       <Filter>소스 파일\Util\UtilFunction</Filter>
     </ClInclude>
+    <ClInclude Include="Base\Render\D2DRender.h">
+      <Filter>소스 파일\Base\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
@@ -472,6 +475,9 @@
     </ClCompile>
     <ClCompile Include="UtilFunction.cpp">
       <Filter>소스 파일\Util\UtilFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Render\D2DRender.cpp">
+      <Filter>소스 파일\Base\Render</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

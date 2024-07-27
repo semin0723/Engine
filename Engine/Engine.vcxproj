@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Base\Render\D2DRender.h" />
     <ClInclude Include="ButtonClicked.h" />
     <ClInclude Include="ButtonComponent.h" />
     <ClInclude Include="ButtonHover.h" />
@@ -206,6 +207,7 @@
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Base\Render\D2DRender.cpp" />
     <ClCompile Include="ButtonClicked.cpp" />
     <ClCompile Include="ButtonComponent.cpp" />
     <ClCompile Include="ButtonHover.cpp" />
