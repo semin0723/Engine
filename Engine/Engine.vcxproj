@@ -148,6 +148,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ButtonClicked.h" />
+    <ClInclude Include="ButtonComponent.h" />
+    <ClInclude Include="ButtonHover.h" />
+    <ClInclude Include="ButtonNormal.h" />
+    <ClInclude Include="ButtonPressed.h" />
+    <ClInclude Include="ButtonReleased.h" />
+    <ClInclude Include="ButtonStates.h" />
     <ClInclude Include="ColliderComponent.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentManager.h" />
@@ -194,10 +201,17 @@
     <ClInclude Include="UI.h" />
     <ClInclude Include="UIGroup.h" />
     <ClInclude Include="UITransform.h" />
+    <ClInclude Include="UtilFunction.h" />
     <ClInclude Include="Vector3.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ButtonClicked.cpp" />
+    <ClCompile Include="ButtonComponent.cpp" />
+    <ClCompile Include="ButtonHover.cpp" />
+    <ClCompile Include="ButtonNormal.cpp" />
+    <ClCompile Include="ButtonPressed.cpp" />
+    <ClCompile Include="ButtonReleased.cpp" />
     <ClCompile Include="ColliderComponent.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ComponentManager.cpp" />
@@ -240,6 +254,7 @@
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="UIGroup.cpp" />
     <ClCompile Include="UITransform.cpp" />
+    <ClCompile Include="UtilFunction.cpp" />
     <ClCompile Include="Vector3.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>

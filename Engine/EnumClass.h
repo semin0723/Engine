@@ -8,3 +8,12 @@ enum class CollisionGroup {
 
 	End = 32,
 };
+
+enum class Button_State {
+	Normal,
+	Hover,
+	Pressed,
+	Released,
+	Clicked,
+
+};

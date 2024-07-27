@@ -10,6 +10,7 @@
 #include <limits>
 #include <chrono>
 #include <tuple>
+#include <random>
 
 #define _USE_MATH_DEFINES
 #include <cmath>
