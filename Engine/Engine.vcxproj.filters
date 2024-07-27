@@ -133,6 +133,15 @@
     <Filter Include="소스 파일\Util\CallTimer">
       <UniqueIdentifier>{2b42d62f-0ea4-460a-9d61-9e2736800b3e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Component\Rigidbody">
+      <UniqueIdentifier>{2a2376ec-c687-4214-8c1a-dbfcc934f216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\BaseSystem">
+      <UniqueIdentifier>{833231b2-0627-4e8c-b642-e0aedf4ba9ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\BaseSystem\Input">
+      <UniqueIdentifier>{6a640468-8108-4a89-8811-5392417d77cf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -267,6 +276,12 @@
     <ClInclude Include="FunctionTimer.h">
       <Filter>소스 파일\Util\CallTimer</Filter>
     </ClInclude>
+    <ClInclude Include="RigidBody.h">
+      <Filter>소스 파일\Component\Rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="InputSystem.h">
+      <Filter>소스 파일\BaseSystem\Input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
@@ -373,6 +388,12 @@
     </ClCompile>
     <ClCompile Include="FunctionTimer.cpp">
       <Filter>소스 파일\Util\CallTimer</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBody.cpp">
+      <Filter>소스 파일\Component\Rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="InputSystem.cpp">
+      <Filter>소스 파일\BaseSystem\Input</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

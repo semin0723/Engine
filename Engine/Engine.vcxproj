@@ -176,11 +176,13 @@
     <ClInclude Include="IComponent.h" />
     <ClInclude Include="IEntity.h" />
     <ClInclude Include="IEvent.h" />
+    <ClInclude Include="InputSystem.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapComponent.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ResourceSystem.h" />
+    <ClInclude Include="RigidBody.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteSet.h" />
     <ClInclude Include="State.h" />
@@ -215,6 +217,7 @@
     <ClCompile Include="IComponent.cpp" />
     <ClCompile Include="IEntity.cpp" />
     <ClCompile Include="IEvent.cpp" />
+    <ClCompile Include="InputSystem.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapComponent.cpp" />
     <ClCompile Include="Object.cpp" />
@@ -225,6 +228,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="ResourceSystem.cpp" />
+    <ClCompile Include="RigidBody.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteSet.cpp" />
     <ClCompile Include="StateComponent.cpp" />
