@@ -282,6 +282,12 @@
     <ClInclude Include="InputSystem.h">
       <Filter>소스 파일\BaseSystem\Input</Filter>
     </ClInclude>
+    <ClInclude Include="UIGroup.h">
+      <Filter>소스 파일\Component\UI\Group</Filter>
+    </ClInclude>
+    <ClInclude Include="TextComponent.h">
+      <Filter>소스 파일\Component\UI\Text</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
@@ -394,6 +400,12 @@
     </ClCompile>
     <ClCompile Include="InputSystem.cpp">
       <Filter>소스 파일\BaseSystem\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="UIGroup.cpp">
+      <Filter>소스 파일\Component\UI\Group</Filter>
+    </ClCompile>
+    <ClCompile Include="TextComponent.cpp">
+      <Filter>소스 파일\Component\UI\Text</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
