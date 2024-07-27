@@ -1,4 +1,4 @@
-#include "../../pch.h"
+#include "pch.h"
 #include "D2DRender.h"
 
 bool D2DRender::Initialize(HWND hWnd)
