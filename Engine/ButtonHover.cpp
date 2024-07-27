@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "ButtonHover.h"
 #include "Components.h"
 
@@ -12,8 +13,8 @@ ButtonHover::~ButtonHover()
 
 void ButtonHover::StateEnter()
 {
-	Sprite* sp = ComponentManager->Getcomponent<Sprite>(_owner);
-	sp->GetImage(L"Images\\Button\\" + ComponentManager->Getcomponent<ButtonComponent>(_owner)->_name + StringToWstring(_stateName));
+	Sprite* sp = componentManager->GetComponent<Sprite>(_owner);
+	sp->_spriteId = L"Images\\Button\\" + componentManager->GetComponent<ButtonComponent>(_owner)->_name + StringToWstring(_stateName);
 }
 
 void ButtonHover::StateUpdate(float dt)

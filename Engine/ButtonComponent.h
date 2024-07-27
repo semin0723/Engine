@@ -2,7 +2,9 @@
 #include "Component.h"
 #include "globalheader.h"
 
-class ButtonComponent
+class State;
+
+class ButtonComponent : public Component<ButtonComponent>
 {
 public:
 	ButtonComponent();

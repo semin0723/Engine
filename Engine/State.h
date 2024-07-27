@@ -1,6 +1,5 @@
 #pragma once
-#include "globalheader.h"
-#include "GameElements.h"
+#include "Entity.h"
 
 class State {
 public:

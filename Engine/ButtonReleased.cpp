@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "ButtonReleased.h"
 #include "Components.h"
 
@@ -20,7 +21,7 @@ void ButtonReleased::StateUpdate(float dt)
 	accumulateTime += dt;
 	if (accumulateTime >= _stateChangeInterval) {
 		accumulateTime = 0;
-		ButtonComponent* btn = ComponentManager->Getcomponent<ButtonComponent>(_owner);
+		ButtonComponent* btn = componentManager->GetComponent<ButtonComponent>(_owner);
 		btn->ChangeState(Button_State::Normal);
 	}
 }

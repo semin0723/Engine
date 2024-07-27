@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "ButtonClicked.h"
 #include "Components.h"
 
@@ -12,7 +13,7 @@ ButtonClicked::~ButtonClicked()
 
 void ButtonClicked::StateEnter()
 {
-	ButtonComponent* btn = ComponentManager->Getcomponent<ButtonComponent>(_owner);
+	ButtonComponent* btn = componentManager->GetComponent<ButtonComponent>(_owner);
 	if(btn->_onclick) btn->_onclick();
 
 	btn->ChangeState(Button_State::Released);
