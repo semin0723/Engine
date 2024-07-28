@@ -4,6 +4,6 @@
 
 void Object::Initialize()
 {
-	Transform*	tf	= entityManager->GetEntity(_entityId)->AddComponent<Transform>();
-	Sprite*		sp	= entityManager->GetEntity(_entityId)->AddComponent<Sprite>();
+	entityManager->GetEntity(_entityId)->AddComponent<Transform>();
+	entityManager->GetEntity(_entityId)->AddComponent<Sprite>();
 }

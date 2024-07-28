@@ -198,9 +198,10 @@
     <ClInclude Include="TextComponent.h" />
     <ClInclude Include="TimeSystem.h" />
     <ClInclude Include="Transform.h" />
-    <ClInclude Include="UI.h" />
+    <ClInclude Include="UIButton.h" />
     <ClInclude Include="UIGroup.h" />
     <ClInclude Include="UISprite.h" />
+    <ClInclude Include="UIText.h" />
     <ClInclude Include="UITransform.h" />
     <ClInclude Include="UtilFunction.h" />
     <ClInclude Include="Vector3.h" />
@@ -252,9 +253,10 @@
     <ClCompile Include="TextComponent.cpp" />
     <ClCompile Include="TimeSystem.cpp" />
     <ClCompile Include="Transform.cpp" />
-    <ClCompile Include="UI.cpp" />
+    <ClCompile Include="UIButton.cpp" />
     <ClCompile Include="UIGroup.cpp" />
     <ClCompile Include="UISprite.cpp" />
+    <ClCompile Include="UIText.cpp" />
     <ClCompile Include="UITransform.cpp" />
     <ClCompile Include="UtilFunction.cpp" />
     <ClCompile Include="Vector3.cpp" />

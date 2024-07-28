@@ -1,11 +1,11 @@
 #pragma once
 #include "Entity.h"
 
-class UI : public Entity<UI>
+class UIText : public Entity<UIText>
 {
 public:
-	UI() {}
-	~UI() {}
+	UIText() {}
+	~UIText() {}
 
 	void Initialize();
 };

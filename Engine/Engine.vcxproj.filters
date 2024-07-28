@@ -166,6 +166,12 @@
     <Filter Include="소스 파일\Component\UI\Sprite">
       <UniqueIdentifier>{32e3762a-ffed-4fb1-bb33-c5d5e36e2900}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\DefaultEntity\UI\Text">
+      <UniqueIdentifier>{a130a71c-3814-4d8f-bb3a-f75ae818cc38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\DefaultEntity\UI\Button">
+      <UniqueIdentifier>{e834f7fb-3c55-4e00-a6fb-eb19396572a3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -273,9 +279,6 @@
     <ClInclude Include="World.h">
       <Filter>소스 파일\DefaultEntity\World</Filter>
     </ClInclude>
-    <ClInclude Include="UI.h">
-      <Filter>소스 파일\DefaultEntity\UI</Filter>
-    </ClInclude>
     <ClInclude Include="DefaultUI.h">
       <Filter>소스 파일\DefaultEntity\UI</Filter>
     </ClInclude>
@@ -338,6 +341,12 @@
     </ClInclude>
     <ClInclude Include="UISprite.h">
       <Filter>소스 파일\Component\UI\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="UIText.h">
+      <Filter>소스 파일\DefaultEntity\UI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="UIButton.h">
+      <Filter>소스 파일\DefaultEntity\UI\Button</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -428,9 +437,6 @@
     <ClCompile Include="World.cpp">
       <Filter>소스 파일\DefaultEntity\World</Filter>
     </ClCompile>
-    <ClCompile Include="UI.cpp">
-      <Filter>소스 파일\DefaultEntity\UI</Filter>
-    </ClCompile>
     <ClCompile Include="DefaultUI.cpp">
       <Filter>소스 파일\DefaultEntity\UI</Filter>
     </ClCompile>
@@ -481,6 +487,12 @@
     </ClCompile>
     <ClCompile Include="UISprite.cpp">
       <Filter>소스 파일\Component\UI\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="UIText.cpp">
+      <Filter>소스 파일\DefaultEntity\UI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="UIButton.cpp">
+      <Filter>소스 파일\DefaultEntity\UI\Button</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
