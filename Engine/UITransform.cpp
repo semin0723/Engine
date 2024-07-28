@@ -12,13 +12,22 @@ UITransform::UITransform(Vector3 pos, Vector3 scale, Vector3 rotation) : _positi
 void UITransform::Update(float dt)
 {
 	EntityId parentId = entityManager->GetEntity(_owner)->GetParentEntityId();
-	if (parentId == EntityId() || componentManager->GetComponent<UITransform>(parentId) == nullptr) {
-		_worldPosition = _position;
+	Sprite* sp = componentManager->GetComponent<Sprite>(_owner);
+	_localTransform =
+		D2D1::Matrix3x2F::Scale(_scale.x, _scale.y, D2D1::Point2F(sp->_size.x / 2.0f, sp->_size.y / 2.0f)) *
+		D2D1::Matrix3x2F::Rotation(_rotation.z, D2D1::Point2F(sp->_size.x / 2.0f, sp->_size.y / 2.0f)) *
+		D2D1::Matrix3x2F::Translation(_position.x, _position.y)
+		;
+
+	EntityId parentId = entityManager->GetEntity(_owner)->GetParentEntityId();
+	if (parentId == EntityId() || componentManager->GetComponent<Transform>(parentId) == nullptr) {
+		_screenTransform = _localTransform;
 	}
 	else {
-		Vector3 parentWorldPosition = componentManager->GetComponent<UITransform>(parentId)->_worldPosition;
-		_worldPosition = parentWorldPosition + _position;
+		D2D1::Matrix3x2F parentWorldTransform = componentManager->GetComponent<Transform>(parentId)->_worldTransform;
+		_screenTransform = _localTransform * parentWorldTransform;
 	}
+
 }
 
 void UITransform::Rotate(const Vector3& angle)

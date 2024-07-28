@@ -12,8 +12,12 @@ ResourceSystem::~ResourceSystem()
 	}
 	_spriteSets.clear();
 	_resources.clear();
+	_greenBrush->Release();
+	_blackBrush->Release();
+
 	if(_wicFactory != nullptr) _wicFactory->Release();
 	if (_writeFactory != nullptr) _writeFactory->Release();
+
 }
 
 ResourceSystem* ResourceSystem::GetInstance()
@@ -45,6 +49,34 @@ void ResourceSystem::Initialize(ID2D1HwndRenderTarget* target)
 		DWRITE_FACTORY_TYPE_SHARED,
 		__uuidof(_writeFactory),
 		reinterpret_cast<IUnknown**>(&_writeFactory));
+
+	_target->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Green), &_brushes[1]);
+	_target->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Black), &_brushes[0]);
+}
+
+IDWriteTextFormat* ResourceSystem::GetTextFormat(const std::wstring& fontName, float fontSize, DWRITE_TEXT_ALIGNMENT textallign, DWRITE_PARAGRAPH_ALIGNMENT paragraphalign)
+{
+	if (_textformats.find({ fontName, fontSize }) == _textformats.end()) {
+		IDWriteTextFormat* textformat = nullptr;
+
+		_writeFactory->CreateTextFormat(
+			fontName.c_str(),
+			nullptr,
+			DWRITE_FONT_WEIGHT_NORMAL,
+			DWRITE_FONT_STYLE_NORMAL,
+			DWRITE_FONT_STRETCH_NORMAL,
+			fontSize,
+			L"",
+			&textformat
+		);
+
+		_textformats[{fontName, fontSize}] = textformat;
+	}
+
+	_textformats[{fontName, fontSize}]->SetTextAlignment(textallign);
+	_textformats[{fontName, fontSize}]->SetParagraphAlignment(paragraphalign);
+
+	return _textformats[{fontName, fontSize}];
 }
 
 void ResourceSystem::LoadSpriteData()
