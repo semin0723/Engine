@@ -25,6 +25,15 @@ public:
 	TextComponent();
 	~TextComponent() {}
 
+	void Initialize() {}
+	void Begin() {}
+	void FixedUpdate() {}
+	void Update(float dt);
+	void End() {}
+	void Destroy() {}
+
+	void Render(ID2D1HwndRenderTarget* target);
+
 	std::wstring _text;
 	std::wstring _font;
 	float _fontSize = 0;
