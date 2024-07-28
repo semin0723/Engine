@@ -2,7 +2,6 @@
 #include "Transform.h"
 #include "Components.h"
 #include "ECMain.h"
-#include "FunctionTimer.h"
 
 Transform::Transform() : _position(Vector3(0, 0, 0)), _scale(Vector3(1.0f, 1.0f, 1.0f)), _rotation(Vector3(0, 0, 0))
 {
@@ -14,7 +13,7 @@ Transform::Transform(Vector3 pos, Vector3 scale, Vector3 rotation) : _position(p
 
 void Transform::Begin()
 {
-	FunctionTimer::GetInstance()->SetTimer(std::bind(&Transform::MoveAmount, this), 1.0f, true);
+
 }
 
 void Transform::Update(float dt)
@@ -50,9 +49,4 @@ void Transform::Rotate(const Vector3& angle)
 void Transform::Translate(const Vector3& delta)
 {
 	_position += delta;
-}
-
-void Transform::MoveAmount()
-{
-	_position += Vector3(10.0f, 0, 0);
 }

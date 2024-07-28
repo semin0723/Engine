@@ -9,3 +9,5 @@
 
 #include "UITransform.h"
 #include "ButtonComponent.h"
+#include "UISprite.h"
+#include "TextComponent.h"

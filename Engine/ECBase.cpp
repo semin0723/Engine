@@ -32,13 +32,13 @@ ECBase::~ECBase()
 void ECBase::Initialize()
 {
 	Initialize(_worldEntity);
-	//Initialize(_baseUIEntity);
+	Initialize(_baseUIEntity);
 }
 
 void ECBase::Begin()
 {
 	Begin(_worldEntity);
-	//Begin(_baseUIEntity);
+	Begin(_baseUIEntity);
 }
 
 void ECBase::FixedUpdate()
@@ -49,7 +49,7 @@ void ECBase::FixedUpdate()
 void ECBase::Update(float dt)
 {
 	Update(_worldEntity, dt);
-	//Update(_baseUIEntity, dt);
+	Update(_baseUIEntity, dt);
 
 	FunctionTimer::GetInstance()->Update(dt);
 
@@ -61,13 +61,13 @@ void ECBase::Update(float dt)
 void ECBase::End()
 {
 	End(_worldEntity);
-	//End(_baseUIEntity);
+	End(_baseUIEntity);
 }
 
 void ECBase::Render(ID2D1HwndRenderTarget* target)
 {
 	Render(target, _worldEntity);
-	//Render(target, _baseUIEntity);
+	Render(target, _baseUIEntity);
 }
 
 void ECBase::AddMapEntity(EntityId mapId)
@@ -83,7 +83,7 @@ void ECBase::CreateWorldEntity()
 
 void ECBase::CreateBaseUIEntity()
 {
-	_worldEntity = _entityManager->CreateEntity<DefaultUI>();
+	_baseUIEntity = _entityManager->CreateEntity<DefaultUI>();
 }
 
 void ECBase::Initialize(EntityId id)
@@ -149,6 +149,7 @@ void ECBase::Render(ID2D1HwndRenderTarget* target, EntityId id)
 	if (spriteComponent != INVALID_COMPONENT_ID) {
 		static_cast<Sprite*>(_componentManager->GetComponent(spriteComponent))->Render(target);
 	}
+	
 
 	ChildEntities child = _entityManager->GetEntity(id)->GetChildEntityId();
 	for (auto& i : child) {

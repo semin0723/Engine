@@ -26,7 +26,5 @@ public:
 	D2D1::Matrix3x2F _localTransform;
 	D2D1::Matrix3x2F _worldTransform;
 
-	void MoveAmount();
-
 };
 

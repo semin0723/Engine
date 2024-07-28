@@ -163,6 +163,9 @@
     <Filter Include="소스 파일\Util\UtilFunction">
       <UniqueIdentifier>{f6b1b2b9-8754-410c-9571-571c5b1e65c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Component\UI\Sprite">
+      <UniqueIdentifier>{32e3762a-ffed-4fb1-bb33-c5d5e36e2900}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -333,6 +336,9 @@
     <ClInclude Include="UtilFunction.h">
       <Filter>소스 파일\Util\UtilFunction</Filter>
     </ClInclude>
+    <ClInclude Include="UISprite.h">
+      <Filter>소스 파일\Component\UI\Sprite</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
@@ -472,6 +478,9 @@
     </ClCompile>
     <ClCompile Include="UtilFunction.cpp">
       <Filter>소스 파일\Util\UtilFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="UISprite.cpp">
+      <Filter>소스 파일\Component\UI\Sprite</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

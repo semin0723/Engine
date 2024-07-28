@@ -200,6 +200,7 @@
     <ClInclude Include="Transform.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="UIGroup.h" />
+    <ClInclude Include="UISprite.h" />
     <ClInclude Include="UITransform.h" />
     <ClInclude Include="UtilFunction.h" />
     <ClInclude Include="Vector3.h" />
@@ -253,6 +254,7 @@
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="UIGroup.cpp" />
+    <ClCompile Include="UISprite.cpp" />
     <ClCompile Include="UITransform.cpp" />
     <ClCompile Include="UtilFunction.cpp" />
     <ClCompile Include="Vector3.cpp" />
