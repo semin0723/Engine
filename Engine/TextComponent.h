@@ -37,6 +37,7 @@ public:
 	std::wstring _text;
 	std::wstring _font;
 	float _fontSize = 0;
+	Vector3 _textAreaSize;
 
 	DWRITE_TEXT_ALIGNMENT		_textAlignment			= TEXT_LEFT;
 	DWRITE_PARAGRAPH_ALIGNMENT	_paragraphAlignemt		= PARAGRAPH_UP;

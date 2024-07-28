@@ -4,5 +4,8 @@
 #include "Object.h"
 
 
+// UI Object
 #include "DefaultUI.h"
-#include "UI.h"
+#include "UIText.h"
+#include "UIButton.h"
+#include "UIPannel.h"

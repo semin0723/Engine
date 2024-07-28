@@ -200,6 +200,7 @@
     <ClInclude Include="Transform.h" />
     <ClInclude Include="UIButton.h" />
     <ClInclude Include="UIGroup.h" />
+    <ClInclude Include="UIPannel.h" />
     <ClInclude Include="UISprite.h" />
     <ClInclude Include="UIText.h" />
     <ClInclude Include="UITransform.h" />
@@ -255,6 +256,7 @@
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="UIButton.cpp" />
     <ClCompile Include="UIGroup.cpp" />
+    <ClCompile Include="UIPannel.cpp" />
     <ClCompile Include="UISprite.cpp" />
     <ClCompile Include="UIText.cpp" />
     <ClCompile Include="UITransform.cpp" />

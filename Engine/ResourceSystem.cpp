@@ -12,8 +12,10 @@ ResourceSystem::~ResourceSystem()
 	}
 	_spriteSets.clear();
 	_resources.clear();
-	_greenBrush->Release();
-	_blackBrush->Release();
+	for (auto& i : _brushes) {
+		i->Release();
+	}
+	_brushes.clear();
 
 	if(_wicFactory != nullptr) _wicFactory->Release();
 	if (_writeFactory != nullptr) _writeFactory->Release();

@@ -5,5 +5,6 @@
 void UIButton::Initialize()
 {
 	entityManager->GetEntity(_entityId)->AddComponent<UITransform>();
+	entityManager->GetEntity(_entityId)->AddComponent<UISprite>();
 	entityManager->GetEntity(_entityId)->AddComponent<ButtonComponent>();
 }

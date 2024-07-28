@@ -76,6 +76,12 @@ void ECBase::AddMapEntity(EntityId mapId)
 	_entityManager->GetEntity(mapId)->SetParentEntity(_worldEntity);
 }
 
+void ECBase::AddUIEntity(EntityId uiId)
+{
+	_entityManager->GetEntity(_baseUIEntity)->AddChildEntity(uiId);
+	_entityManager->GetEntity(uiId)->SetParentEntity(_baseUIEntity);
+}
+
 void ECBase::CreateWorldEntity()
 {
 	_worldEntity = _entityManager->CreateEntity<World>();
@@ -146,8 +152,19 @@ void ECBase::Update(EntityId id, float dt)
 void ECBase::Render(ID2D1HwndRenderTarget* target, EntityId id)
 {
 	ComponentId spriteComponent = _componentManager->GetMappingTable()[id._index][Sprite::COMPONENT_TYPE_ID];
+	ComponentId uiSpriteComponent = _componentManager->GetMappingTable()[id._index][UISprite::COMPONENT_TYPE_ID];
+	ComponentId uiTextComponent = _componentManager->GetMappingTable()[id._index][TextComponent::COMPONENT_TYPE_ID];
+
 	if (spriteComponent != INVALID_COMPONENT_ID) {
 		static_cast<Sprite*>(_componentManager->GetComponent(spriteComponent))->Render(target);
+	}
+
+	if(uiSpriteComponent != INVALID_COMPONENT_ID){
+		static_cast<UISprite*>(_componentManager->GetComponent(uiSpriteComponent))->Render(target);
+	}
+
+	if (uiTextComponent != INVALID_COMPONENT_ID) {
+		static_cast<TextComponent*>(_componentManager->GetComponent(uiTextComponent))->Render(target);
 	}
 	
 

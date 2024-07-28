@@ -9,6 +9,9 @@ void MainGame::Initialize(HINSTANCE hInstance, int width, int height)
     EntityId map1 = Map1();
     Engine->AddMapEntity(map1);
 
+    EntityId ui1 = UItestGroup();
+    Engine->AddUIEntity(ui1);
+
     //initial
     Engine->Initialize();
 

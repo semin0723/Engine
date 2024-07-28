@@ -28,6 +28,7 @@ public:
 	void Render(ID2D1HwndRenderTarget* target);
 
 	void AddMapEntity(EntityId mapId);
+	void AddUIEntity(EntityId uiId);
 
 	EntityManager* GetEntityManager() const { return _entityManager; }
 	ComponentManager* GetComponentManager() const { return _componentManager; }

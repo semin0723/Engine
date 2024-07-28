@@ -23,7 +23,6 @@ public:
 	Vector3 _position;
 	Vector3 _rotation;
 	Vector3 _scale;
-	Vector3 _size;
 
 	D2D1::Matrix3x2F _localTransform;
 	D2D1::Matrix3x2F _screenTransform;

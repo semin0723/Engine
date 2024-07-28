@@ -172,6 +172,9 @@
     <Filter Include="소스 파일\DefaultEntity\UI\Button">
       <UniqueIdentifier>{e834f7fb-3c55-4e00-a6fb-eb19396572a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\DefaultEntity\UI\Pannel">
+      <UniqueIdentifier>{78ad65e8-ba38-4c6a-be48-a40de32e1a7a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -348,6 +351,9 @@
     <ClInclude Include="UIButton.h">
       <Filter>소스 파일\DefaultEntity\UI\Button</Filter>
     </ClInclude>
+    <ClInclude Include="UIPannel.h">
+      <Filter>소스 파일\DefaultEntity\UI\Pannel</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
@@ -493,6 +499,9 @@
     </ClCompile>
     <ClCompile Include="UIButton.cpp">
       <Filter>소스 파일\DefaultEntity\UI\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="UIPannel.cpp">
+      <Filter>소스 파일\DefaultEntity\UI\Pannel</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
