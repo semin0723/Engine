@@ -15,12 +15,12 @@ public:
 
 	ComponentTypeId GetComponentTypeId() const { return COMPONENT_TYPE_ID; }
 
-	virtual void OnInitialize()		final { static_cast<T*>(this)->Initialize(); }
-	virtual void OnBegin()			final { static_cast<T*>(this)->Begin(); }
-	virtual void OnFixedUpdate()	final { static_cast<T*>(this)->FixedUpdate(); }
-	virtual void OnUpdate(float dt) final { static_cast<T*>(this)->Update(dt); }
-	virtual void OnEnd()			final { static_cast<T*>(this)->End(); }
-	virtual void OnDestroy()		final { static_cast<T*>(this)->Destroy(); }
+	virtual void OnInitialize()		final {		static_cast<T*>(this)->Initialize();	}
+	virtual void OnBegin()			final {		static_cast<T*>(this)->Begin();			}
+	virtual void OnFixedUpdate()	final {		static_cast<T*>(this)->FixedUpdate();	}
+	virtual void OnUpdate(float dt) final {		static_cast<T*>(this)->Update(dt);		}
+	virtual void OnEnd()			final {		static_cast<T*>(this)->End();			}
+	virtual void OnDestroy()		final {		static_cast<T*>(this)->Destroy();		}
 
 	void Initialize()		{}
 	void Begin()			{}

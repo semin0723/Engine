@@ -4,10 +4,6 @@
 #include "ResourceSystem.h"
 #include "d2d1_1helper.h"
 
-void Sprite::Update(float dt)
-{
-}
-
 void Sprite::Render(ID2D1HwndRenderTarget* target)
 {
 	Transform* tf = componentManager->GetComponent<Transform>(_owner);

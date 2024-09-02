@@ -175,6 +175,12 @@
     <Filter Include="소스 파일\DefaultEntity\UI\Pannel">
       <UniqueIdentifier>{78ad65e8-ba38-4c6a-be48-a40de32e1a7a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\BaseSystem\Render">
+      <UniqueIdentifier>{e18c2ae6-8249-4353-95dd-b1b06134fae6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component\Animator">
+      <UniqueIdentifier>{95e8142e-5fd8-4271-8253-18b4aa35cb0b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -354,6 +360,9 @@
     <ClInclude Include="UIPannel.h">
       <Filter>소스 파일\DefaultEntity\UI\Pannel</Filter>
     </ClInclude>
+    <ClInclude Include="RenderSystem.h">
+      <Filter>소스 파일\BaseSystem\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
@@ -502,6 +511,9 @@
     </ClCompile>
     <ClCompile Include="UIPannel.cpp">
       <Filter>소스 파일\DefaultEntity\UI\Pannel</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderSystem.cpp">
+      <Filter>소스 파일\BaseSystem\Render</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

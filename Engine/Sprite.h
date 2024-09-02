@@ -12,9 +12,21 @@ public:
 	void Initialize() {}
 	void Begin() {}
 	void FixedUpdate() {}
-	void Update(float dt);
+	void Update(float dt) {}
 	void End() {}
 	void Destroy() {}
+
+	// Set
+	void SetSpriteId(std::wstring spriteId) { _spriteId = spriteId; }
+	void SetSize(Vector3 size) { _size = size; }
+	void SetFlipX(bool state) { _flipX = state; }
+	void SetFlipY(bool state) { _flipY = state; }
+	void SetFlipZ(bool state) { _flipZ = state; }
+
+	// Get
+	const bool GetFlipX() const { return _flipX; }
+	const bool GetFlipY() const { return _flipY; }
+	const bool GetFlipZ() const { return _flipZ; }
 
 	void Render(ID2D1HwndRenderTarget* target);
 
@@ -27,5 +39,9 @@ public:
 
 	bool _flipX = false;
 	bool _flipY = false;
+	bool _flipZ = false;
+private:
+
+	friend class RenderSystem;
 };
 
