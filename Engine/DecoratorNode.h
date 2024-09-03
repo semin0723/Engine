@@ -10,7 +10,6 @@ public:
 
 	void AddNode(BaseBTNode* node) { Child = node; }
 	bool DeleteNode() { 
-		delete Child;
 		Child = nullptr; 
 	}
 

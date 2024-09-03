@@ -13,18 +13,19 @@ void ParallelNode::AttachChildAt(BaseBTNode* node, UINT index)
 
 bool ParallelNode::DetachChild(std::string nodeName)
 {
-    std::vector<BaseBTNode*>::iterator iterator;
+    std::vector<BaseBTNode*>::iterator iterator = Childs.end();
     for (auto it = Childs.begin(); it != Childs.end(); it++) {
         if ((*it)->GetName() == nodeName) {
             iterator = it;
+            break;
         }
     }
     if (iterator == Childs.end()) {
         return false;
     }
 
-    delete* iterator;
     Childs.erase(iterator);
+    delete* iterator;
 
     return true;
 }

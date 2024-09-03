@@ -24,19 +24,20 @@ void RandomSelectorNode::AttachChildAt(BaseBTNode* node, UINT index)
 
 bool RandomSelectorNode::DetachChild(std::string nodeName)
 {
-    std::vector<BaseBTNode*>::iterator iterator;
+    std::vector<BaseBTNode*>::iterator iterator = Childs.end();
     for (auto it = Childs.begin(); it != Childs.end(); it++) {
         if ((*it)->GetName() == nodeName) {
             iterator = it;
+            break;
         }
     }
     if (iterator == Childs.end()) {
         return false;
     }
 
-    delete* iterator;
     Childs.erase(iterator);
     ChildNodeProbaility.erase(ChildNodeProbaility.begin() + (iterator - Childs.begin()));
+    delete* iterator;
 
     return true;
 }

@@ -205,6 +205,9 @@
     <Filter Include="소스 파일\Util\BehaviorTree\BTNode\Decorator">
       <UniqueIdentifier>{de405487-ed0a-44a4-8e52-e52bb1434068}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Component\AIComponent">
+      <UniqueIdentifier>{4e6567a5-cd5a-4d0b-be71-8598623ba424}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -411,6 +414,9 @@
     <ClInclude Include="DecoratorNode.h">
       <Filter>소스 파일\Util\BehaviorTree\BTNode\Decorator</Filter>
     </ClInclude>
+    <ClInclude Include="AIComponent.h">
+      <Filter>소스 파일\Component\AIComponent</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
@@ -583,6 +589,9 @@
     </ClCompile>
     <ClCompile Include="DecoratorNode.cpp">
       <Filter>소스 파일\Util\BehaviorTree\BTNode\Decorator</Filter>
+    </ClCompile>
+    <ClCompile Include="AIComponent.cpp">
+      <Filter>소스 파일\Component\AIComponent</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

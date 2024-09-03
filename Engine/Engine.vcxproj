@@ -149,6 +149,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ActionNode.h" />
+    <ClInclude Include="AIComponent.h" />
     <ClInclude Include="BaseBTNode.h" />
     <ClInclude Include="BehaviorTree.h" />
     <ClInclude Include="BTStatus.h" />
@@ -219,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ActionNode.cpp" />
+    <ClCompile Include="AIComponent.cpp" />
     <ClCompile Include="BaseBTNode.cpp" />
     <ClCompile Include="BehaviorTree.cpp" />
     <ClCompile Include="ButtonClicked.cpp" />
