@@ -56,8 +56,8 @@ void GameEngine::Run()
             _time.Update();
             _timer += _time.GetDeltaTime();
 
-            if (_timer >= 0.2f) {
-                _timer -= 0.2f;
+            if (_timer >= 0.02f) {
+                _timer -= 0.02f;
                 Engine->FixedUpdate();
             }
             Engine->Update(_time.GetDeltaTime());

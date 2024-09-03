@@ -11,20 +11,56 @@ public:
 	static void DestroyInstance();
 
 	template<class F, class... ARGS>
-	ULL SetTimer(F&& function, float waitInterval, bool repeat, ARGS&&... args) {
+	ULL SetTimer(F&& function, ARGS&&... args, float waitInterval, bool repeat, float delay = 0) {
 		auto timerfunction = std::make_shared<std::function<void(ARGS...)>>(std::bind(std::forward<F>(function), std::forward<ARGS>(args)...));
 		
 		ULL idx = 0;
 		for (; idx < _timerFunctionTable.size(); idx++) {
 			if (!std::get<3>(_timerFunctionTable[idx])) {
-				_timerFunctionTable[idx] = { waitInterval, waitInterval, repeat, [timerfunction]() { (*timerfunction)(); } };
+				_timerFunctionTable[idx] = { delay, waitInterval, repeat, [timerfunction]() { (*timerfunction)(); } };
 				return idx;
 			}
 		}
 
 		ExpandSize();
 
-		_timerFunctionTable[idx] = { waitInterval, waitInterval, repeat, [timerfunction]() { (*timerfunction)(); } };
+		_timerFunctionTable[idx] = { delay, waitInterval, repeat, [timerfunction]() { (*timerfunction)(); } };
+		return idx;
+	}
+
+	template<class F, class... ARGS>
+	ULL SetTimerOnce(F&& function, ARGS&&... args, float delay) {
+		auto timerfunction = std::make_shared<std::function<void(ARGS...)>>(std::bind(std::forward<F>(function), std::forward<ARGS>(args)...));
+
+		ULL idx = 0;
+		for (; idx < _timerFunctionTable.size(); idx++) {
+			if (!std::get<3>(_timerFunctionTable[idx])) {
+				_timerFunctionTable[idx] = { delay, 0, false, [timerfunction]() { (*timerfunction)(); } };
+				return idx;
+			}
+		}
+
+		ExpandSize();
+
+		_timerFunctionTable[idx] = { delay, 0, false, [timerfunction]() { (*timerfunction)(); } };
+		return idx;
+	}
+
+	template<class F, class... ARGS>
+	ULL SetTimerRepeat(F&& function, ARGS&&... args, float waitInterval, float delay = 0) {
+		auto timerfunction = std::make_shared<std::function<void(ARGS...)>>(std::bind(std::forward<F>(function), std::forward<ARGS>(args)...));
+
+		ULL idx = 0;
+		for (; idx < _timerFunctionTable.size(); idx++) {
+			if (!std::get<3>(_timerFunctionTable[idx])) {
+				_timerFunctionTable[idx] = { delay, waitInterval, true, [timerfunction]() { (*timerfunction)(); } };
+				return idx;
+			}
+		}
+
+		ExpandSize();
+
+		_timerFunctionTable[idx] = { delay, waitInterval, true, [timerfunction]() { (*timerfunction)(); } };
 		return idx;
 	}
 

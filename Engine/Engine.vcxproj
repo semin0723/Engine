@@ -148,6 +148,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ActionNode.h" />
+    <ClInclude Include="AIComponent.h" />
+    <ClInclude Include="BaseBTNode.h" />
+    <ClInclude Include="BehaviorTree.h" />
+    <ClInclude Include="BTStatus.h" />
     <ClInclude Include="ButtonClicked.h" />
     <ClInclude Include="ButtonComponent.h" />
     <ClInclude Include="ButtonHover.h" />
@@ -160,6 +165,7 @@
     <ClInclude Include="ComponentManager.h" />
     <ClInclude Include="Components.h" />
     <ClInclude Include="D2DRender.h" />
+    <ClInclude Include="DecoratorNode.h" />
     <ClInclude Include="DefaultUI.h" />
     <ClInclude Include="ECBase.h" />
     <ClInclude Include="ECMain.h" />
@@ -187,10 +193,14 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapComponent.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="ParallelNode.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="RandomSelectorNode.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="ResourceSystem.h" />
     <ClInclude Include="RigidBody.h" />
+    <ClInclude Include="SelectorNode.h" />
+    <ClInclude Include="SequenceNode.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteSet.h" />
     <ClInclude Include="State.h" />
@@ -210,6 +220,10 @@
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ActionNode.cpp" />
+    <ClCompile Include="AIComponent.cpp" />
+    <ClCompile Include="BaseBTNode.cpp" />
+    <ClCompile Include="BehaviorTree.cpp" />
     <ClCompile Include="ButtonClicked.cpp" />
     <ClCompile Include="ButtonComponent.cpp" />
     <ClCompile Include="ButtonHover.cpp" />
@@ -220,6 +234,7 @@
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ComponentManager.cpp" />
     <ClCompile Include="D2DRender.cpp" />
+    <ClCompile Include="DecoratorNode.cpp" />
     <ClCompile Include="DefaultUI.cpp" />
     <ClCompile Include="ECBase.cpp" />
     <ClCompile Include="ECMain.cpp" />
@@ -241,15 +256,19 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapComponent.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ParallelNode.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="RandomSelectorNode.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="ResourceSystem.cpp" />
     <ClCompile Include="RigidBody.cpp" />
+    <ClCompile Include="SelectorNode.cpp" />
+    <ClCompile Include="SequenceNode.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteSet.cpp" />
     <ClCompile Include="StateComponent.cpp" />
