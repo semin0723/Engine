@@ -2,7 +2,7 @@
 #include "Component.h"
 #include "globalheader.h"
 
-class AIComponent : Component<AIComponent>
+class AIComponent : public Component<AIComponent>
 {
 public:
 	AIComponent() {}
