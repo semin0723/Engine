@@ -22,25 +22,33 @@ public:
 	void SetFlipX(bool state) { _flipX = state; }
 	void SetFlipY(bool state) { _flipY = state; }
 	void SetFlipZ(bool state) { _flipZ = state; }
+	void SetOrderLayer(ULL layerOrder) { _orderLayer = layerOrder; }
 
 	// Get
 	const bool GetFlipX() const { return _flipX; }
 	const bool GetFlipY() const { return _flipY; }
 	const bool GetFlipZ() const { return _flipZ; }
+	const int GetOrderLayer() const { return _orderLayer; }
 
-	void Render(ID2D1HwndRenderTarget* target);
+	const bool IsAnimationEnd() const;
 
-	std::wstring _spriteId;
+private:
+	ULL _orderLayer = 0;
+
+	// Sprite Area
 	Vector3 _size;
-
-	float _playRate = 0;
-	int _startAnimationIdx = 0;
-	int _endAnimationIdx = (std::numeric_limits<int>::max)();
-
+	std::wstring _spriteId;
 	bool _flipX = false;
 	bool _flipY = false;
 	bool _flipZ = false;
-private:
+
+	// Animation Area
+	float _playRate = 0;
+	bool _loop = true;
+	int _curAnimationIdx = 0;
+	int _startAnimationIdx = 0;
+	int _endAnimationIdx = (std::numeric_limits<int>::max)();
+
 
 	friend class RenderSystem;
 };

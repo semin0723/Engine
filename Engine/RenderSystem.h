@@ -8,7 +8,11 @@ public:
 	RenderSystem() {}
 	~RenderSystem() {}
 
-	void Render(ID2D1HwndRenderTarget* target);
+	void Render();
+
+	void SpriteRender(ID2D1HwndRenderTarget* target);
+	void UISpriteRender(ID2D1HwndRenderTarget* target);
+	void TextRender(ID2D1HwndRenderTarget* target);
 
 private:
 
