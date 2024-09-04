@@ -54,7 +54,7 @@ private:
 	template<class E>
 	void AddEventCallback(std::string sender, IEventDelegate* const eventDelegate) {
 		EventTypeId eventId = E::EVENT_TYPE_ID;
-		EventDispatcherMap::const_iterator it = _eventMap.find(eventId);
+		EventDispatcherMap::const_iterator it = _eventMap.find({ sender, eventId });
 		if (it == _eventMap.end()) {
 			std::pair<DispatcherKey, IEventDispatcher*> dispatcher({ sender, eventId }, new EventDispatcher<E>());
 			dispatcher.second->AddEventCallback(eventDelegate);
