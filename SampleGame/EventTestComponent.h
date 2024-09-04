@@ -1,7 +1,7 @@
 #pragma once
 #include "EngineHeader.h"
 
-class EventTestComponent : Component<EventTestComponent> {
+class EventTestComponent : public Component<EventTestComponent> {
 public:
 	EventTestComponent() {}
 	~EventTestComponent() {}

@@ -5,7 +5,7 @@
 
 template <class T>
 class Component :
-    public IComponent
+    public IComponent, public EventListener
 {
 public:
     static const ComponentTypeId COMPONENT_TYPE_ID;

@@ -4,6 +4,7 @@
 
 class InputSystem
 {
+public:
 	InputSystem();
 	~InputSystem();
 

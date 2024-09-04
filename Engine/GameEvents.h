@@ -2,12 +2,12 @@
 #include "Event.h"
 
 // Mouse Event
-struct MouseButtonDown : Event<MouseButtonDown> {
+struct MouseButtonDown : public Event<MouseButtonDown> {
 
 };
 
 // Key Event
-struct KeyDown : Event<KeyDown> {
+struct KeyDown : public Event<KeyDown> {
 	int keyCode;
 	float delta;
 

@@ -1,8 +1,12 @@
 #include "pch.h"
 #include "ECBase.h"
 #include "GameElements.h"
-#include "ResourceSystem.h"
 #include "FunctionTimer.h"
+
+// System
+#include "ResourceSystem.h"
+#include "RenderSystem.h"
+#include "InputSystem.h"
 
 ECBase::ECBase()
 {
@@ -10,6 +14,7 @@ ECBase::ECBase()
 	_componentManager = new ComponentManager;
 	_entityManager = new EntityManager(_componentManager);
 	_renderSystem = new RenderSystem;
+	_inputSystem = new InputSystem;
 
 	CreateWorldEntity();
 	CreateBaseUIEntity();
@@ -35,7 +40,7 @@ ECBase::~ECBase()
 
 void ECBase::Initialize()
 {
-	// TODO: 여기서 현재 위치한 map의 Entity들을 전부 초기화 해야합니다.
+	// 여기서 현재 위치한 map의 Entity들을 전부 초기화 해줍니다.
 	//Initialize(_worldEntity);
 	Initialize(entityManager->GetEntity(_worldEntity)->GetChildEntityId()[_curMapIdx]);
 	Initialize(_baseUIEntity);
@@ -57,6 +62,9 @@ void ECBase::FixedUpdate()
 void ECBase::Update(float dt)
 {
 	//Update(_worldEntity, dt);
+
+	_inputSystem->Update(dt);
+
 	Update(entityManager->GetEntity(_worldEntity)->GetChildEntityId()[_curMapIdx], dt);
 	Update(_baseUIEntity, dt);
 
@@ -76,9 +84,12 @@ void ECBase::End()
 
 void ECBase::Render(ID2D1HwndRenderTarget* target)
 {
-	// TODO: 여기서 world내의 map중에 현재 위치한 map을 랜더링 하도록 변경합니다.
-	Render(target, _worldEntity);
-	Render(target, _baseUIEntity);
+	// 여기서 world내의 map중에 현재 위치한 map을 랜더링 하도록 해줍니다.
+	//Render(target, _worldEntity);
+	//Render(target, _baseUIEntity);
+
+	_renderSystem->SpriteRender(target, entityManager->GetEntity(_worldEntity)->GetChildEntityId()[_curMapIdx]);
+	_renderSystem->UIRender(target, _baseUIEntity);
 }
 
 void ECBase::AddMapEntity(EntityId mapId)
@@ -160,27 +171,27 @@ void ECBase::Update(EntityId id, float dt)
 	}
 }
 
-void ECBase::Render(ID2D1HwndRenderTarget* target, EntityId id)
-{
-	ComponentId spriteComponent = _componentManager->GetMappingTable()[id._index][Sprite::COMPONENT_TYPE_ID];
-	ComponentId uiSpriteComponent = _componentManager->GetMappingTable()[id._index][UISprite::COMPONENT_TYPE_ID];
-	ComponentId uiTextComponent = _componentManager->GetMappingTable()[id._index][TextComponent::COMPONENT_TYPE_ID];
-
-	if (spriteComponent != INVALID_COMPONENT_ID) {
-		static_cast<Sprite*>(_componentManager->GetComponent(spriteComponent))->Render(target);
-	}
-
-	if(uiSpriteComponent != INVALID_COMPONENT_ID){
-		static_cast<UISprite*>(_componentManager->GetComponent(uiSpriteComponent))->Render(target);
-	}
-
-	if (uiTextComponent != INVALID_COMPONENT_ID) {
-		static_cast<TextComponent*>(_componentManager->GetComponent(uiTextComponent))->Render(target);
-	}
-	
-
-	ChildEntities child = _entityManager->GetEntity(id)->GetChildEntityId();
-	for (auto& i : child) {
-		Render(target, i);
-	}
-}
+//void ECBase::Render(ID2D1HwndRenderTarget* target, EntityId id)
+//{
+//	ComponentId spriteComponent = _componentManager->GetMappingTable()[id._index][Sprite::COMPONENT_TYPE_ID];
+//	ComponentId uiSpriteComponent = _componentManager->GetMappingTable()[id._index][UISprite::COMPONENT_TYPE_ID];
+//	ComponentId uiTextComponent = _componentManager->GetMappingTable()[id._index][TextComponent::COMPONENT_TYPE_ID];
+//
+//	if (spriteComponent != INVALID_COMPONENT_ID) {
+//		static_cast<Sprite*>(_componentManager->GetComponent(spriteComponent))->Render(target);
+//	}
+//
+//	if(uiSpriteComponent != INVALID_COMPONENT_ID){
+//		static_cast<UISprite*>(_componentManager->GetComponent(uiSpriteComponent))->Render(target);
+//	}
+//
+//	if (uiTextComponent != INVALID_COMPONENT_ID) {
+//		static_cast<TextComponent*>(_componentManager->GetComponent(uiTextComponent))->Render(target);
+//	}
+//	
+//
+//	ChildEntities child = _entityManager->GetEntity(id)->GetChildEntityId();
+//	for (auto& i : child) {
+//		Render(target, i);
+//	}
+//}

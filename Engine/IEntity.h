@@ -3,14 +3,13 @@
 #include "EntityHandleTable.h"
 #include "FamilyTypeId.h"
 #include "ComponentManager.h"
-#include "EventListener.h"
 
 using EntityTypeId = TypeId;
 using ChildEntities = std::vector<EntityId>;
 
 static const ULL INVALID_ENTITY_ID = (std::numeric_limits<ULL>::max)();
 
-class IEntity : public EventListener
+class IEntity
 {
 public:
 	IEntity();

@@ -1,4 +1,9 @@
 #pragma once
+
+// base
+#include "Entity.h"
+
+// common Object
 #include "World.h"
 #include "Map.h"
 #include "Object.h"

@@ -3,11 +3,12 @@
 #include "EventHandler.h"
 #include "EntityManager.h"
 #include "ComponentManager.h"
-#include "RenderSystem.h"
 
 class EventListener;
 class IEvent;
 class EventHandler;
+class RenderSystem;
+class InputSystem;
 
 class ECBase
 {
@@ -44,8 +45,7 @@ private:
 	ComponentManager* _componentManager;
 
 	RenderSystem* _renderSystem;
-
-	const std::vector<std::vector<ComponentId>>& _componentMappingTable = _componentManager->GetMappingTable();
+	InputSystem* _inputSystem;
 
 	ECBase(const ECBase&) = delete;
 	ECBase& operator=(ECBase&) = delete;
@@ -76,7 +76,7 @@ private:
 	void Update(EntityId id, float dt);
 	void End(EntityId id) {}
 
-	void Render(ID2D1HwndRenderTarget* target, EntityId id);
+	//void Render(ID2D1HwndRenderTarget* target, EntityId id);
 
 
 	friend class IEvent;

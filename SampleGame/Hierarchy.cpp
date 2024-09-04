@@ -7,9 +7,9 @@
 EntityId Map1() {
 	EntityId map = entityManager->CreateEntity<Map>();
 
-	EntityId sampleObject = entityManager->CreateEntity<Object>();
-	Transform* tf = componentManager->GetComponent<Transform>(sampleObject);
-	Sprite* sp = componentManager->GetComponent<Sprite>(sampleObject);
+	EntityId	sampleObject	= entityManager->CreateEntity<Object>();
+	Transform*	tf				= componentManager->GetComponent<Transform>(sampleObject);
+	Sprite*		sp				= componentManager->GetComponent<Sprite>(sampleObject);
 
 	entityManager->GetEntity(sampleObject)->SetName("Sample");
 
@@ -20,7 +20,7 @@ EntityId Map1() {
 
 	tf->SetPosition(Vector3(100.0f, 100.0f, 0));
 
-	RigidBody* rb = componentManager->AddComponent<RigidBody>(sampleObject);
+	//RigidBody* rb = componentManager->AddComponent<RigidBody>(sampleObject);
 
 
 

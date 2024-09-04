@@ -7,7 +7,9 @@
 
 #include "MapComponent.h"
 
+#include "UIGroup.h"
 #include "UITransform.h"
-#include "ButtonComponent.h"
 #include "UISprite.h"
+#include "ButtonComponent.h"
 #include "TextComponent.h"
+#include "ButtonComponent.h"
