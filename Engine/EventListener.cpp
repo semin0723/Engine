@@ -12,8 +12,8 @@ EventListener::~EventListener()
 
 void EventListener::UnRegisterAllCallbacks()
 {
-	for (auto& delegate : _callbacks) {
-		Engine->UnSubscribeEvent(delegate);
-	}
+	//for (auto& delegate : _callbacks) {
+	//	Engine->UnSubscribeEvent(delegate);
+	//}
 	_callbacks.clear();
 }

@@ -1,9 +1,10 @@
 #pragma once
 #include "IEntity.h"
+#include "EventListener.h"
 
 template<class E>
 class Entity :
-    public IEntity
+    public IEntity, public EventListener
 {
 public:
     Entity() {}

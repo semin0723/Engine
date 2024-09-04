@@ -14,6 +14,6 @@ public:
 
 private:
 	EventTypeId _typeId;
-
+	std::string _sender;
 };
 

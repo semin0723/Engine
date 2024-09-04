@@ -14,9 +14,10 @@ public:
 	ECBase();
 	~ECBase();
 
+	// send Event with sender Entity Name
 	template<class E, class ...ARGS>
-	void SendEvent(ARGS&&... eventArgs) {
-		_eventHandler->Send<E>(std::forward<ARGS>(eventArgs)...);
+	void SendEvent(std::string&& sender, ARGS&&... eventArgs) {
+		_eventHandler->Send<E>(std::forward<std::string>(sender), std::forward<ARGS>(eventArgs)...);
 	}
 
 	void Initialize();
@@ -44,12 +45,12 @@ private:
 	ECBase& operator=(ECBase&) = delete;
 
 	template<class E>
-	void SubscribeEvent(IEventDelegate* const eventDelegate) {
-		_eventHandler->AddEventCallback<E>(eventDelegate);
+	void SubscribeEvent(std::string sender, IEventDelegate* const eventDelegate) {
+		_eventHandler->AddEventCallback<E>(sender, eventDelegate);
 	}
 
-	void UnSubscribeEvent(IEventDelegate* eventDelegate) {
-		_eventHandler->RemoveEventCallback(eventDelegate);
+	void UnSubscribeEvent(std::string sender, IEventDelegate* eventDelegate) {
+		_eventHandler->RemoveEventCallback(sender, eventDelegate);
 	}
 
 	// World Entity

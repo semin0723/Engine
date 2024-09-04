@@ -185,6 +185,7 @@
     <ClInclude Include="FunctionTimer.h" />
     <ClInclude Include="GameElements.h" />
     <ClInclude Include="GameEngine.h" />
+    <ClInclude Include="GameEvents.h" />
     <ClInclude Include="globalheader.h" />
     <ClInclude Include="IComponent.h" />
     <ClInclude Include="IEntity.h" />

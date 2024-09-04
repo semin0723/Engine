@@ -426,6 +426,9 @@
     <ClInclude Include="RenderSystem.h">
       <Filter>소스 파일\BaseSystem\Render</Filter>
     </ClInclude>
+    <ClInclude Include="GameEvents.h">
+      <Filter>헤더 파일\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
