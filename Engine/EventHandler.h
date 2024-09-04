@@ -6,7 +6,7 @@ class EventHandler
 {
 	// friend class main Engine
 	using DispatcherKey = std::pair<std::string, EventTypeId>;
-	using EventDispatcherMap = std::unordered_map<DispatcherKey, IEventDispatcher*>;
+	using EventDispatcherMap = std::map<DispatcherKey, IEventDispatcher*>;
 
 	using EventPackage = std::pair<std::string, IEvent*>;
 	using EventContainer = std::vector<EventPackage>;
@@ -19,7 +19,7 @@ public:
 	void ClearEventDispatcher() { _eventMap.clear(); }
 
 	template<class E, class...ARGS>
-	void Send(std::string&& sender, ARGS&&... eventArgs) {
+	void Send(std::string sender, ARGS&&... eventArgs) {
 		_eventContainer.push_back({ std::forward<std::string>(sender), new E(std::forward<ARGS>(eventArgs)...) });
 	}
 

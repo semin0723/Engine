@@ -26,6 +26,7 @@ public:
 	void SetOrderLayer(ULL layerOrder) { _orderLayer = layerOrder; }
 
 	// Get
+	const Vector3 GetSize() const { return _size; }
 	const bool GetFlipX() const { return _flipX; }
 	const bool GetFlipY() const { return _flipY; }
 	const bool GetFlipZ() const { return _flipZ; }

@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "ComponentManager.h"
 
-using EntityComponentMap = std::vector<std::vector<ComponentId>>;
+//using EntityComponentMap = std::vector<std::vector<ComponentId>>;
 
 ComponentManager::ComponentManager()
 {

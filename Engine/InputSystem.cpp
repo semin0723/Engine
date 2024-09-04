@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "InputSystem.h"
+#include "ECBase.h"
+#include "GameEvents.h"
 
 InputSystem::InputSystem() : _keyState(256, false)
 {
@@ -20,7 +22,7 @@ void InputSystem::Update(float dt)
 		if (GetAsyncKeyState(i) & 0x8000) {
 			if (_keyState[i] == false) {
 				_keyState[i] = true;
-				//Engine->SendEvent<KeyDown>(i, dt);
+				Engine->SendEvent<KeyDown>("Input", i, dt);
 			}
 			else {
 				//Engine->SendEvent<Key>(i, dt);

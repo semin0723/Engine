@@ -38,7 +38,7 @@ public:
 	void SetText				(std::wstring text)						{ _text = text; }
 	void SetFont				(std::wstring font)						{ _font = font; }
 	void SetFontSize			(float size)							{ _font = size; }
-	void SetTextAreaSize		(Vector3& areaSize)						{ _textAreaSize = areaSize; }
+	void SetTextAreaSize		(const Vector3& areaSize)						{ _textAreaSize = areaSize; }
 	void SetTextAlignment		(DWRITE_TEXT_ALIGNMENT alignment)		{ _textAlignment = alignment; }
 	void SetParagraphAlignment	(DWRITE_PARAGRAPH_ALIGNMENT alignment)	{ _paragraphAlignemt = alignment; }
 

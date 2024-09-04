@@ -9,6 +9,7 @@ ECBase::ECBase()
 	_eventHandler = new EventHandler;
 	_componentManager = new ComponentManager;
 	_entityManager = new EntityManager(_componentManager);
+	_renderSystem = new RenderSystem;
 
 	CreateWorldEntity();
 	CreateBaseUIEntity();
@@ -27,28 +28,36 @@ ECBase::~ECBase()
 
 	delete _eventHandler;
 	_eventHandler = nullptr;
+
+	delete _renderSystem;
+	_renderSystem = nullptr;
 }
 
 void ECBase::Initialize()
 {
-	Initialize(_worldEntity);
+	// TODO: 여기서 현재 위치한 map의 Entity들을 전부 초기화 해야합니다.
+	//Initialize(_worldEntity);
+	Initialize(entityManager->GetEntity(_worldEntity)->GetChildEntityId()[_curMapIdx]);
 	Initialize(_baseUIEntity);
 }
 
 void ECBase::Begin()
 {
-	Begin(_worldEntity);
+	//Begin(_worldEntity);
+	Begin(entityManager->GetEntity(_worldEntity)->GetChildEntityId()[_curMapIdx]);
 	Begin(_baseUIEntity);
 }
 
 void ECBase::FixedUpdate()
 {
-	FixedUpdate(_worldEntity);
+	//FixedUpdate(_worldEntity);
+	FixedUpdate(entityManager->GetEntity(_worldEntity)->GetChildEntityId()[_curMapIdx]);
 }
 
 void ECBase::Update(float dt)
 {
-	Update(_worldEntity, dt);
+	//Update(_worldEntity, dt);
+	Update(entityManager->GetEntity(_worldEntity)->GetChildEntityId()[_curMapIdx], dt);
 	Update(_baseUIEntity, dt);
 
 	FunctionTimer::GetInstance()->Update(dt);
@@ -60,12 +69,14 @@ void ECBase::Update(float dt)
 
 void ECBase::End()
 {
-	End(_worldEntity);
+	//End(_worldEntity);
+	End(entityManager->GetEntity(_worldEntity)->GetChildEntityId()[_curMapIdx]);
 	End(_baseUIEntity);
 }
 
 void ECBase::Render(ID2D1HwndRenderTarget* target)
 {
+	// TODO: 여기서 world내의 map중에 현재 위치한 map을 랜더링 하도록 변경합니다.
 	Render(target, _worldEntity);
 	Render(target, _baseUIEntity);
 }

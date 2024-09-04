@@ -13,6 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Test">
+      <UniqueIdentifier>{c34dd626-98ee-4033-bb95-3cab1e18c281}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Test\Component">
+      <UniqueIdentifier>{8498ee1b-30c3-4cc7-843b-f3069002d808}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Test\Component\EventTestComponent">
+      <UniqueIdentifier>{85ecad47-9ae6-4ccb-927c-4d0f71494a60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EngineHeader">
+      <UniqueIdentifier>{f42f64ef-8ffe-46e4-b474-70478b0c3100}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ClientHeader">
+      <UniqueIdentifier>{56a18b7a-547c-4b07-aef2-5368150e2e57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -33,6 +48,15 @@
     <ClInclude Include="Hierarchy.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="EventTestComponent.h">
+      <Filter>소스 파일\Test\Component\EventTestComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineHeader.h">
+      <Filter>소스 파일\EngineHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientHeader.h">
+      <Filter>소스 파일\ClientHeader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SampleGame.cpp">
@@ -43,6 +67,9 @@
     </ClCompile>
     <ClCompile Include="Hierarchy.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="EventTestComponent.cpp">
+      <Filter>소스 파일\Test\Component\EventTestComponent</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

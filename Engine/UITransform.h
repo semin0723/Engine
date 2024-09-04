@@ -21,15 +21,17 @@ public:
 	void Translate(const Vector3& delta);
 
 	// set
-	void SetPosition(Vector3& position) { _position = position; }
-	void SetRotation(Vector3& rotation) { _rotation = rotation; }
-	void SetScale(Vector3& scale) { _scale = scale; }
+	void SetPosition(const Vector3& position) { _position = position; }
+	void SetRotation(const Vector3& rotation) { _rotation = rotation; }
+	void SetScale(const Vector3& scale) { _scale = scale; }
 
 
 	// get
 	const Vector3 GetPosition() const { return _position; }
 	const Vector3 GetRotation() const { return _rotation; }
 	const Vector3 GetScale()	const { return _scale; }
+
+	const D2D1::Matrix3x2F GetScreenTransform() const { return _screenTransform; }
 
 private:
 	Vector3 _position;

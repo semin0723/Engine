@@ -4,7 +4,7 @@
 
 template<class E>
 class Entity :
-    public IEntity, public EventListener
+    public IEntity
 {
 public:
     Entity() {}

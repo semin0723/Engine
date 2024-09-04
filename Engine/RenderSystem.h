@@ -8,13 +8,11 @@ public:
 	RenderSystem() {}
 	~RenderSystem() {}
 
-	void Render();
+	void SpriteRender(ID2D1HwndRenderTarget* target, EntityId eid);
+	void UIRender(ID2D1HwndRenderTarget* target, EntityId eid);
 
-	void SpriteRender(ID2D1HwndRenderTarget* target);
-	void UISpriteRender(ID2D1HwndRenderTarget* target);
-	void TextRender(ID2D1HwndRenderTarget* target);
 
 private:
-
+	std::vector<ComponentId> _spriteComponents;
 };
 

@@ -3,13 +3,14 @@
 #include "EntityHandleTable.h"
 #include "FamilyTypeId.h"
 #include "ComponentManager.h"
+#include "EventListener.h"
 
 using EntityTypeId = TypeId;
 using ChildEntities = std::vector<EntityId>;
 
 static const ULL INVALID_ENTITY_ID = (std::numeric_limits<ULL>::max)();
 
-class IEntity
+class IEntity : public EventListener
 {
 public:
 	IEntity();
@@ -40,6 +41,9 @@ public:
 	void SetActive(bool state);
 	bool Active() const { return _active; }
 
+	void SetName(std::string name) { _name = name; }
+	const std::string GetName() const { return _name; }
+
 	virtual void OnEnable() {}
 	virtual void OnDisable() {}
 
@@ -50,6 +54,8 @@ protected:
 
 	EntityId _parentId;
 	ChildEntities _childs;
+
+	std::string _name;
 
 	bool _active = false;
 

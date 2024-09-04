@@ -3,6 +3,7 @@
 #include "EventHandler.h"
 #include "EntityManager.h"
 #include "ComponentManager.h"
+#include "RenderSystem.h"
 
 class EventListener;
 class IEvent;
@@ -16,7 +17,7 @@ public:
 
 	// send Event with sender Entity Name
 	template<class E, class ...ARGS>
-	void SendEvent(std::string&& sender, ARGS&&... eventArgs) {
+	void SendEvent(std::string sender, ARGS&&... eventArgs) {
 		_eventHandler->Send<E>(std::forward<std::string>(sender), std::forward<ARGS>(eventArgs)...);
 	}
 
@@ -28,8 +29,11 @@ public:
 	void End();
 	void Render(ID2D1HwndRenderTarget* target);
 
+	// Map은 0번부터 1번씬 입니다.
 	void AddMapEntity(EntityId mapId);
 	void AddUIEntity(EntityId uiId);
+
+	const EntityId GetUIEntity() const { return _baseUIEntity; }
 
 	EntityManager* GetEntityManager() const { return _entityManager; }
 	ComponentManager* GetComponentManager() const { return _componentManager; }
@@ -38,6 +42,8 @@ private:
 	EventHandler* _eventHandler;
 	EntityManager* _entityManager;
 	ComponentManager* _componentManager;
+
+	RenderSystem* _renderSystem;
 
 	const std::vector<std::vector<ComponentId>>& _componentMappingTable = _componentManager->GetMappingTable();
 
@@ -56,6 +62,9 @@ private:
 	// World Entity
 	EntityId _worldEntity;
 	EntityId _baseUIEntity;
+
+	//  == curScene
+	int _curMapIdx = 0;
 
 	void CreateWorldEntity();
 	void CreateBaseUIEntity();

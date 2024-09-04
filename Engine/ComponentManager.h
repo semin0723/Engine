@@ -3,6 +3,7 @@
 #include "IComponent.h"
 #include "FamilyTypeId.h"
 
+using EntityComponentMap = std::vector<std::vector<ComponentId>>;
 
 class ComponentManager
 {
@@ -10,7 +11,6 @@ class ComponentManager
 	ComponentManager& operator=(ComponentManager&) = delete;
 
 	using ComponentTable = std::vector<IComponent*>;
-	using EntityComponentMap = std::vector<std::vector<ComponentId>>;
 
 public:
 	ComponentManager();

@@ -1,4 +1,3 @@
-#include "../Engine/GameElements.h"
 #include "Hierarchy.h"
 
 //----------------------------------
@@ -12,10 +11,14 @@ EntityId Map1() {
 	Transform* tf = componentManager->GetComponent<Transform>(sampleObject);
 	Sprite* sp = componentManager->GetComponent<Sprite>(sampleObject);
 
-	sp->_spriteId = L"TestSprite";
-	sp->_size = Vector3(40.0f, 40.0f, 0);
+	entityManager->GetEntity(sampleObject)->SetName("Sample");
 
-	tf->_position = Vector3(100.0f, 100.0f, 0);
+	componentManager->AddComponent<EventTestComponent>(sampleObject);
+
+	sp->SetSpriteId(L"TestSprite");
+	sp->SetSize(Vector3(40.0f, 40.0f, 0));
+
+	tf->SetPosition(Vector3(100.0f, 100.0f, 0));
 
 	RigidBody* rb = componentManager->AddComponent<RigidBody>(sampleObject);
 
@@ -36,10 +39,12 @@ EntityId UItestGroup()
 	UITransform* uitf = componentManager->GetComponent<UITransform>(textTest);
 	TextComponent* uitc = componentManager->GetComponent<TextComponent>(textTest);
 
-	uitf->_position = Vector3(500.0f, 500.0f, 0);
-	uitc->_textAreaSize = Vector3(300.0f, 100.0f, 0);
-	uitc->_text = L"Test Text";
-	uitc->_textAlignment = TEXT_CENTER;
+	entityManager->GetEntity(textTest)->SetName("testText");
+
+	uitf->SetPosition(Vector3(500.0f, 500.0f, 0));
+	uitc->SetTextAreaSize(Vector3(300.0f, 100.0f, 0));
+	uitc->SetText(L"Test Text");
+	uitc->SetTextAlignment(TEXT_CENTER);
 
 	entityManager->GetEntity(uipannel)->AddChildEntity(textTest);
 

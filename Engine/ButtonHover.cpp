@@ -14,7 +14,7 @@ ButtonHover::~ButtonHover()
 void ButtonHover::StateEnter()
 {
 	Sprite* sp = componentManager->GetComponent<Sprite>(_owner);
-	sp->_spriteId = L"Images\\Button\\" + componentManager->GetComponent<ButtonComponent>(_owner)->_name + StringToWstring(_stateName);
+	sp->SetSpriteId(L"Images\\Button\\" + componentManager->GetComponent<ButtonComponent>(_owner)->_name + StringToWstring(_stateName));
 }
 
 void ButtonHover::StateUpdate(float dt)
