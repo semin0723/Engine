@@ -28,19 +28,19 @@ public:
 	void Initialize() {}
 	void Begin() {}
 	void FixedUpdate() {}
-	void Update(float dt);
+	void Update(float dt) {}
 	void End() {}
 	void Destroy() {}
 
 	void Render(ID2D1HwndRenderTarget* target);
 
 	// set
-	void SetText				(std::wstring text)						{ _text = text; }
-	void SetFont				(std::wstring font)						{ _font = font; }
-	void SetFontSize			(float size)							{ _font = size; }
-	void SetTextAreaSize		(const Vector3& areaSize)						{ _textAreaSize = areaSize; }
-	void SetTextAlignment		(DWRITE_TEXT_ALIGNMENT alignment)		{ _textAlignment = alignment; }
-	void SetParagraphAlignment	(DWRITE_PARAGRAPH_ALIGNMENT alignment)	{ _paragraphAlignemt = alignment; }
+	void SetText				(std::wstring text)							{ _text = text; }
+	void SetFont				(std::wstring font)							{ _font = font; }
+	void SetFontSize			(float fontSize)							{ _fontSize = fontSize; }
+	void SetTextAreaSize		(const Vector3& areaSize)					{ _textAreaSize = areaSize; }
+	void SetTextAlignment		(DWRITE_TEXT_ALIGNMENT alignment)			{ _textAlignment = alignment; }
+	void SetParagraphAlignment	(DWRITE_PARAGRAPH_ALIGNMENT alignment)		{ _paragraphAlignemt = alignment; }
 
 	// get
 	const std::wstring&					GetText()					const	{ return _text; }

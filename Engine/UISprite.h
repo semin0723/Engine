@@ -30,7 +30,7 @@ public:
 	const bool GetFlipX() const { return _flipX; }
 	const bool GetFlipY() const { return _flipY; }
 	const bool GetFlipZ() const { return _flipZ; }
-	const int GetOrderLayer() const { return _orderLayer; }
+	const ULL GetOrderLayer() const { return _orderLayer; }
 
 	const bool IsAnimationEnd() const;
 

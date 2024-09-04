@@ -14,5 +14,8 @@ public:
 
 private:
 	std::vector<ComponentId> _spriteComponents;
+
+	void UISpriteRender(ID2D1HwndRenderTarget* target, EntityId eid);
+	void TextRender(ID2D1HwndRenderTarget* target, EntityId eid);
 };
 
