@@ -191,6 +191,7 @@
     <ClInclude Include="IEntity.h" />
     <ClInclude Include="IEvent.h" />
     <ClInclude Include="InputSystem.h" />
+    <ClInclude Include="Log.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapComponent.h" />
     <ClInclude Include="Object.h" />
@@ -254,6 +255,7 @@
     <ClCompile Include="IEntity.cpp" />
     <ClCompile Include="IEvent.cpp" />
     <ClCompile Include="InputSystem.cpp" />
+    <ClCompile Include="Log.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapComponent.cpp" />
     <ClCompile Include="Object.cpp" />

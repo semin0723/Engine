@@ -9,6 +9,7 @@ class IEvent;
 class EventHandler;
 class RenderSystem;
 class InputSystem;
+class Log;
 
 class ECBase
 {
@@ -21,6 +22,8 @@ public:
 	void SendEvent(std::string sender, ARGS&&... eventArgs) {
 		_eventHandler->Send<E>(std::forward<std::string>(sender), std::forward<ARGS>(eventArgs)...);
 	}
+
+	void RecordLog(std::string message, std::source_location sourceLocation = std::source_location::current());
 
 	void Initialize();
 	void MapEnter() {}
@@ -44,8 +47,13 @@ private:
 	EntityManager* _entityManager;
 	ComponentManager* _componentManager;
 
+	// system
 	RenderSystem* _renderSystem;
 	InputSystem* _inputSystem;
+
+	// logger
+	Log* _log;
+
 
 	ECBase(const ECBase&) = delete;
 	ECBase& operator=(ECBase&) = delete;

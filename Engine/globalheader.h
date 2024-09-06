@@ -5,3 +5,6 @@
 #include "GameElements.h"
 #include "UtilFunction.h"
 #include "FunctionTimer.h"
+
+// Logger
+#include "Log.h"

@@ -14,6 +14,8 @@ public:
 
     float GetFrameRate();
 
+    static std::string GetTimeStamp();
+
 private:
     TimePoint _prevTime;
     TimePoint _curTime;

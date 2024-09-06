@@ -214,6 +214,9 @@
     <Filter Include="소스 파일\Component\Animator">
       <UniqueIdentifier>{95e8142e-5fd8-4271-8253-18b4aa35cb0b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Util\Log">
+      <UniqueIdentifier>{888b68df-463a-44c7-8d70-9bf2aaba8208}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -429,6 +432,9 @@
     <ClInclude Include="GameEvents.h">
       <Filter>헤더 파일\Base</Filter>
     </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>소스 파일\Util\Log</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeSystem.cpp">
@@ -607,6 +613,9 @@
     </ClCompile>
     <ClCompile Include="RenderSystem.cpp">
       <Filter>소스 파일\BaseSystem\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>소스 파일\Util\Log</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

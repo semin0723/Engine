@@ -8,6 +8,9 @@
 #include "RenderSystem.h"
 #include "InputSystem.h"
 
+// Logger
+#include "Log.h"
+
 ECBase::ECBase()
 {
 	_eventHandler = new EventHandler;
@@ -15,6 +18,7 @@ ECBase::ECBase()
 	_entityManager = new EntityManager(_componentManager);
 	_renderSystem = new RenderSystem;
 	_inputSystem = new InputSystem;
+	_log = new Log;
 
 	CreateWorldEntity();
 	CreateBaseUIEntity();
@@ -102,6 +106,11 @@ void ECBase::AddUIEntity(EntityId uiId)
 {
 	_entityManager->GetEntity(_baseUIEntity)->AddChildEntity(uiId);
 	_entityManager->GetEntity(uiId)->SetParentEntity(_baseUIEntity);
+}
+
+void ECBase::RecordLog(std::string message, std::source_location sourceLocation)
+{
+	_log->RecordLog(message, sourceLocation);
 }
 
 void ECBase::CreateWorldEntity()

@@ -23,6 +23,7 @@ void InputSystem::Update(float dt)
 			if (_keyState[i] == false) {
 				_keyState[i] = true;
 				Engine->SendEvent<KeyDown>("Input", i, dt);
+				Engine->RecordLog(std::format("KeyCode Pressed {}", i));
 			}
 			else {
 				//Engine->SendEvent<Key>(i, dt);
