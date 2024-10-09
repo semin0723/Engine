@@ -39,3 +39,23 @@ void Log::RecordLog(std::string message, std::source_location sourceLocation = s
 
 	_cv.notify_one();
 }
+
+void Log::WriteLog()
+{
+	std::ofstream logFile("log.txt", std::ios::out | std::ios::app);
+
+	// 프로그램 종료시 또는 평상시.
+	while (!_done || !_logQueue.empty()) {
+		std::unique_lock<std::mutex> lock(_mutex);
+
+		_cv.wait(lock, [this]() { return !_logQueue.empty() || _done; });
+
+		while (!_logQueue.empty()) {
+			std::string log = _logQueue.front();
+			_logQueue.pop();
+
+			logFile << log << "\n";
+		}
+	}
+	logFile.close();
+}
