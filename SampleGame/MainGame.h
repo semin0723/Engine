@@ -7,5 +7,5 @@ public:
 	MainGame() = default;
 	~MainGame() = default;
 
-	virtual void Initialize(HINSTANCE hInstance, int width, int height) override;
+	virtual bool Initialize(HINSTANCE hInstance, int width, int height) override;
 };

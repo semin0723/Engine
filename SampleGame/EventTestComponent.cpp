@@ -7,15 +7,24 @@ void EventTestComponent::Initialize()
 
 void EventTestComponent::OnButtonDown(const KeyDown* event)
 {
+	float speed = 300.0f;
+
+	Vector3 dir(0.0f, 0.0f, 0.0f);
+
 	if (event->keyCode == 'A') {
-		componentManager->GetComponent<Transform>(GetOwner())->SetPosition(Vector3(500.f, 500.f, 0));
+		dir += Vector3(-1.f, 0.f, 0.f);
 	}
-	else if (event->keyCode == 'V') {
-		// 자신의 Entity이름으로 sender한다.
-		Engine->SendEvent<KeyDown>(entityManager->GetEntity(GetOwner())->GetName(), 'H', event->delta);
+	else if (event->keyCode == 'D') {
+		dir += Vector3( 1.f, 0.f, 0.f);
 	}
-	else if (event->keyCode == 'H') {
-		// 위에서 자신의 Entity이름으로 Send했는데 해당하는 함수는 Input에서만 이벤트를 받기 때문에 H를 눌렀을 때의 이벤트는 발생하지 않음.
-		componentManager->GetComponent<Transform>(GetOwner())->SetPosition(Vector3(100.f, 100.f, 0));
+	else if (event->keyCode == 'W') {
+		dir += Vector3(0.f, -1.f, 0.f);
 	}
+	else if (event->keyCode == 'S') {
+		dir += Vector3(0.f,  1.f, 0.f);
+	}
+	Vector3 curPos = componentManager->GetComponent<Transform>(GetOwner())->GetPosition();
+
+	Engine->SendMovePacket(GetOwner(), dir, speed, event->delta);
+	//componentManager->GetComponent<Transform>(GetOwner())->SetPosition(curPos + (dir * speed * event->delta));
 }

@@ -3,7 +3,7 @@
 #include "ResourceSystem.h"
 #include "ECMain.h"
 
-void GameEngine::Initialize(HINSTANCE hInstance, int width, int height)
+bool GameEngine::Initialize(HINSTANCE hInstance, int width, int height)
 {
     WNDCLASS wcex;
 
@@ -36,6 +36,8 @@ void GameEngine::Initialize(HINSTANCE hInstance, int width, int height)
 
     // Engine Initialize
     EC::Initialize();
+
+    return true;
 }
 
 void GameEngine::Run()

@@ -3,6 +3,10 @@
 #include "EventHandler.h"
 #include "EntityManager.h"
 #include "ComponentManager.h"
+#include "MoveTest.pb.h"
+#include "../Includes/Server/ClientEntrance.h"
+#include "Packet.h"
+#include "Vector3.h"
 
 class EventListener;
 class IEvent;
@@ -23,9 +27,13 @@ public:
 		_eventHandler->Send<E>(std::forward<std::string>(sender), std::forward<ARGS>(eventArgs)...);
 	}
 
-	void RecordLog(std::string message, std::source_location sourceLocation = std::source_location::current());
+	void SendMovePacket(EntityId eid, Vector3 dir, float speed, float dt);
+	void SendEnterPacket(EntityId eid, Vector3 pos);
+	void DispatchPacket();
 
-	void Initialize();
+	void RecordLog(std::string message, std::source_location sourceLocation = std::source_location::current());
+	void InitializeObject();
+	bool Initialize();
 	void MapEnter() {}
 	void Begin();
 	void FixedUpdate();

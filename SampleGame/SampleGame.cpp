@@ -10,8 +10,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     MainGame winApp;
 
-    winApp.Initialize(hInstance, 1024, 768);
-    winApp.Run();
+    bool res = winApp.Initialize(hInstance, 1024, 768);
+    if (res == true) {
+        winApp.Run();
+    }
     winApp.Finalize();
 
     return EXIT_SUCCESS;

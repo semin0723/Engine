@@ -7,7 +7,7 @@ public:
 	GameEngine() = default;
 	~GameEngine() = default;
 
-	virtual void Initialize(HINSTANCE hInstance, int width, int height);
+	virtual bool Initialize(HINSTANCE hInstance, int width, int height);
 	void Run();
 	//virtual void FixedUpdate() {}
 	//virtual void Update(float dt) {}

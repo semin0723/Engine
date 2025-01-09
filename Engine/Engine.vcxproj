@@ -73,6 +73,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Bin\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <IncludePath>$(SolutionDir)Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Bin\</OutDir>
@@ -126,6 +128,10 @@
       </SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>libprotobufd.lib;Server_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -194,7 +200,9 @@
     <ClInclude Include="Log.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapComponent.h" />
+    <ClInclude Include="MoveTest.pb.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Packet.h" />
     <ClInclude Include="ParallelNode.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RandomSelectorNode.h" />
@@ -258,6 +266,9 @@
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapComponent.cpp" />
+    <ClCompile Include="MoveTest.pb.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ParallelNode.cpp" />
     <ClCompile Include="pch.cpp">

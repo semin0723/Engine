@@ -20,6 +20,7 @@ EntityId Map1() {
 
 	tf->SetPosition(Vector3(100.0f, 100.0f, 0));
 
+	Engine->SendEnterPacket(sampleObject, tf->GetPosition());
 	//RigidBody* rb = componentManager->AddComponent<RigidBody>(sampleObject);
 
 
