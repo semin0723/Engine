@@ -2,3 +2,7 @@ TestSprite
 {
 Test1,data\\Images\\TestImage.png
 }
+TestSprite2
+{
+Test2,data\\Images\\Remote.png
+}

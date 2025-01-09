@@ -30,6 +30,7 @@ public:
 	const bool GetFlipY() const { return _flipY; }
 	const bool GetFlipZ() const { return _flipZ; }
 	const ULL GetOrderLayer() const { return _orderLayer; }
+	std::wstring GetSpriteId() { return _spriteId; }
 
 	const bool IsAnimationEnd() const;
 

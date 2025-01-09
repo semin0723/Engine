@@ -23,7 +23,7 @@ EntityId Map1() {
 	Engine->SendEnterPacket(sampleObject, tf->GetPosition());
 	//RigidBody* rb = componentManager->AddComponent<RigidBody>(sampleObject);
 
-
+	Engine->AddCurPlayer(sampleObject);
 
 	entityManager->GetEntity(map)->AddChildEntity(sampleObject);
 

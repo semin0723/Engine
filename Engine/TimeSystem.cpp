@@ -37,11 +37,6 @@ std::string TimeSystem::GetTimeStamp()
             timeStruct.tm_year + 1900, timeStruct.tm_mon + 1, timeStruct.tm_mday,
             timeStruct.tm_hour, timeStruct.tm_min, timeStruct.tm_sec
         );
-    //char temp[128];
-    //snprintf(temp, sizeof(temp), "%04d-%02d-%02d %02d:%02d:%02d",
-    //    timeStruct.tm_year + 1900, timeStruct.tm_mon + 1, timeStruct.tm_mday,
-    //    timeStruct.tm_hour, timeStruct.tm_min, timeStruct.tm_sec);
 
-    //return std::string(temp);
     return timeStamp;
 }

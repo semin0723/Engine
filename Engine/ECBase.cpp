@@ -47,8 +47,7 @@ ECBase::~ECBase()
 void ECBase::SendMovePacket(EntityId eid, Vector3 dir, float speed, float dt)
 {
 	MoveTest::Move move;
-	move.set_objnum(eid._index);
-	move.set_objver(eid._version);
+	move.set_serialnum(_curPlayerSerialNum);
 	move.set_x(dir.x);
 	move.set_y(dir.y);
 	move.set_speed(speed);
@@ -61,9 +60,11 @@ void ECBase::SendMovePacket(EntityId eid, Vector3 dir, float speed, float dt)
 
 void ECBase::SendEnterPacket(EntityId eid, Vector3 pos)
 {
+	Sprite* sp = componentManager->GetComponent<Sprite>(eid);
+	std::wstring spriteId = sp->GetSpriteId();
 	MoveTest::PlayerEnter playerEnter;
-	playerEnter.set_objnum(eid._index);
-	playerEnter.set_objver(eid._version);
+	playerEnter.set_serialnum(1);
+	playerEnter.set_resource(std::string().assign(spriteId.begin(), spriteId.end()));
 
 	std::string msg = playerEnter.SerializeAsString();
 
@@ -86,13 +87,49 @@ void ECBase::DispatchPacket()
 		(*msgQueue).pop();
 
 		switch ((PacketID)packet._packetId) {
-		case PacketID::ASyncPlayer:
+		case PacketID::SyncPlayer:
 		{
-			MoveTest::AsyncPlayer async;
-			async.ParseFromArray(packet._data, packet._packetSize - sizeof(PacketHeader));
-			Transform* tf = entityManager->GetEntity({ async.objnum(), async.objver() })->GetComponent<Transform>();
-			tf->SetPosition(Vector3(async.x(), async.y(), 0.0f));
+			MoveTest::SyncPlayer sync;
+			sync.ParseFromArray(packet._data, packet._packetSize - sizeof(PacketHeader));
+			Transform* tf = nullptr;
 
+			if (sync.serialnum() == _curPlayerSerialNum) {
+				tf = componentManager->GetComponent<Transform>(_curPlayer);
+				tf->SetPosition(Vector3(sync.x(), sync.y(), 0.0f));
+			}
+			else {
+				tf = componentManager->GetComponent<Transform>(_remotePlayer[sync.serialnum()]);
+				tf->SetPosition(Vector3(sync.x(), sync.y(), 0.0f));
+			}
+
+			break;
+		}
+		case PacketID::RoomEnter:
+		{
+			MoveTest::PlayerEnter roomEnter;
+			roomEnter.ParseFromArray(packet._data, packet._packetSize - sizeof(PacketHeader));
+			_curPlayerSerialNum = roomEnter.serialnum();
+
+			break;
+		}
+		case PacketID::SyncOtherPlayer:
+		{
+			MoveTest::SyncOtherPlayer sync;
+			sync.ParseFromArray(packet._data, packet._packetSize - sizeof(PacketHeader));
+
+			if (sync.serialnum() == _curPlayerSerialNum) {
+				break;
+			}
+
+			EntityId remotePlayer = entityManager->CreateEntity<Object>();
+			Transform* tf = componentManager->GetComponent<Transform>(remotePlayer);
+			Sprite* sp = componentManager->GetComponent<Sprite>(remotePlayer);
+
+			tf->SetPosition(Vector3(sync.x(), sync.y(), 0.0f));
+			sp->SetSpriteId(std::wstring().assign(sync.resource().begin(), sync.resource().end()));
+			sp->SetSize(Vector3(40.0f, 40.0f, 0));
+
+			_remotePlayer.insert({ sync.serialnum(), remotePlayer });
 			break;
 		}
 
@@ -100,6 +137,11 @@ void ECBase::DispatchPacket()
 			break;
 		}
 	}
+}
+
+void ECBase::AddCurPlayer(EntityId eid)
+{
+	_curPlayer = eid;
 }
 
 bool ECBase::Initialize()
@@ -139,6 +181,9 @@ void ECBase::Update(float dt)
 	_inputSystem->Update(dt);
 
 	Update(entityManager->GetEntity(_worldEntity)->GetChildEntityId()[_curMapIdx], dt);
+	for (auto& [serial, eid] : _remotePlayer) {
+		Update(eid, dt);
+	}
 	Update(_baseUIEntity, dt);
 
 	FunctionTimer::GetInstance()->Update(dt);
@@ -165,6 +210,10 @@ void ECBase::Render(ID2D1HwndRenderTarget* target)
 
 	_renderSystem->SpriteRender(target, entityManager->GetEntity(_worldEntity)->GetChildEntityId()[_curMapIdx]);
 	_renderSystem->UIRender(target, _baseUIEntity);
+
+	for (auto& [serial, eid] : _remotePlayer) {
+		_renderSystem->SpriteRender(target, eid);
+	}
 }
 
 void ECBase::AddMapEntity(EntityId mapId)

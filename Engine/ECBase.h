@@ -30,6 +30,7 @@ public:
 	void SendMovePacket(EntityId eid, Vector3 dir, float speed, float dt);
 	void SendEnterPacket(EntityId eid, Vector3 pos);
 	void DispatchPacket();
+	void AddCurPlayer(EntityId eid);
 
 	void RecordLog(std::string message, std::source_location sourceLocation = std::source_location::current());
 	void InitializeObject();
@@ -78,6 +79,10 @@ private:
 	// World Entity
 	EntityId _worldEntity;
 	EntityId _baseUIEntity;
+
+	uint64_t _curPlayerSerialNum = 0;
+	EntityId _curPlayer;
+	std::unordered_map<uint64_t, EntityId> _remotePlayer;
 
 	//  == curScene
 	int _curMapIdx = 0;
